@@ -269,6 +269,8 @@
 
         document.getElementById('hero-version').textContent = `Najnowsza: ${version}`;
         document.getElementById('cta-version').textContent = `${version} · Windows 10/11 · ~120 MB`;
+        document.getElementById('hero-download').innerHTML = document.getElementById('hero-download').innerHTML.replace('Pobierz na Windows', `Pobierz ${version} na Windows`);
+        document.getElementById('cta-download').innerHTML = document.getElementById('cta-download').innerHTML.replace('Pobierz Karafy na Windows', `Pobierz Karafy ${version} na Windows`);
         setDownloadLinks(downloadUrl);
 
         const changelog = document.getElementById('changelog');
