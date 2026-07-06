@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karafy — YouTube to Karaoke</title>
-  <meta name="description" content="Turn any YouTube link into a karaoke file with AI-synced lyrics. Free Windows app. No cloud, no Python." />
+  <title>Karafy — YouTube do Karaoke</title>
+  <meta name="description" content="Zamień dowolny link YouTube w plik karaoke z zsynchronizowanymi tekstami. Darmowa aplikacja Windows. Bez chmury, bez Pythona." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -30,9 +30,9 @@
     <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
       <span class="font-bold text-lg tracking-tight">Karafy</span>
       <div class="flex items-center gap-3">
-        <a href="/pl/" class="text-sm text-gray-400 hover:text-white transition">PL</a>
+        <a href="/" class="text-sm text-gray-400 hover:text-white transition">EN</a>
         <a id="nav-download" href="#" class="text-sm bg-purple-600 hover:bg-purple-500 px-4 py-1.5 rounded-full font-medium transition">
-          Download
+          Pobierz
         </a>
       </div>
     </div>
@@ -43,17 +43,17 @@
     <div class="max-w-3xl mx-auto">
       <div class="inline-flex items-center gap-2 bg-purple-900/40 border border-purple-700/40 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-8">
         <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
-        <span id="hero-version">Loading latest version…</span>
+        <span id="hero-version">Ładowanie najnowszej wersji…</span>
       </div>
 
       <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
-        YouTube link →<br/>
-        <span class="gradient-text">Karaoke file</span>
+        Link YouTube →<br/>
+        <span class="gradient-text">Plik karaoke</span>
       </h1>
 
       <p class="text-xl text-gray-400 mb-10 max-w-xl mx-auto">
-        Paste a YouTube URL. Karafy separates vocals, fetches and transcribes lyrics,
-        syncs them to the audio, and exports both a karaoke version and a clean instrumental track.
+        Wklej link YouTube. Karafy oddziela wokal, pobiera i transkrybuje tekst,
+        synchronizuje go z muzyką i eksportuje wersję karaoke oraz czysty podkład instrumentalny.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -61,63 +61,63 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
           </svg>
-          Download for Windows
+          Pobierz na Windows
         </a>
-        <a href="#how-it-works" class="inline-flex items-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 font-medium px-8 py-3.5 rounded-xl text-lg transition">
-          See how it works
+        <a href="#jak-to-dziala" class="inline-flex items-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 font-medium px-8 py-3.5 rounded-xl text-lg transition">
+          Jak to działa
         </a>
       </div>
 
-      <p class="text-sm text-gray-500 mt-4">Windows 10/11 · Free &amp; Pro</p>
+      <p class="text-sm text-gray-500 mt-4">Windows 10/11 · Bezpłatny i Pro</p>
     </div>
   </section>
 
   <!-- Features -->
   <section class="py-20 px-6 bg-gray-950">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-14">Everything you need</h2>
+      <h2 class="text-3xl font-bold text-center mb-14">Wszystko czego potrzebujesz</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">🧠</div>
-          <h3 class="font-semibold text-lg mb-2">Local AI Transcription</h3>
-          <p class="text-gray-400 text-sm">Powered by Whisper.net — runs entirely on your machine. No cloud, no Python, no API keys.</p>
+          <h3 class="font-semibold text-lg mb-2">Lokalna transkrypcja AI</h3>
+          <p class="text-gray-400 text-sm">Whisper.net działa lokalnie na Twoim komputerze. Bez chmury, bez Pythona, bez kluczy API.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">🎵</div>
-          <h3 class="font-semibold text-lg mb-2">Multiple Formats</h3>
-          <p class="text-gray-400 text-sm">Exports KFN, CDG+MP3, and LRC — each in two versions: original and instrumental. Compatible with most karaoke players and software.</p>
+          <h3 class="font-semibold text-lg mb-2">Wiele formatów</h3>
+          <p class="text-gray-400 text-sm">Eksportuje KFN, CDG+MP3 i LRC — w dwóch wersjach: oryginalna i instrumentalna. Kompatybilne z większością odtwarzaczy karaoke.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">🎤</div>
-          <h3 class="font-semibold text-lg mb-2">Vocal Separation</h3>
-          <p class="text-gray-400 text-sm">Automatically splits the audio into vocals and instrumental. Exports two KFN files — one with the original track, one with clean backing — ready to sing along.</p>
+          <h3 class="font-semibold text-lg mb-2">Separacja wokalu</h3>
+          <p class="text-gray-400 text-sm">Automatycznie oddziela głos od muzyki. Eksportuje dwa pliki KFN — jeden z oryginalną ścieżką, jeden z czystym podkładem — gotowy do śpiewu.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">✏️</div>
-          <h3 class="font-semibold text-lg mb-2">Lyrics Editor</h3>
-          <p class="text-gray-400 text-sm">Built-in editor to fix timing or lyrics before export. Split lines, adjust timestamps.</p>
+          <h3 class="font-semibold text-lg mb-2">Edytor tekstów</h3>
+          <p class="text-gray-400 text-sm">Wbudowany edytor do poprawiania timingu lub tekstów przed eksportem. Dziel linie, dostosuj znaczniki czasu.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">⚡</div>
-          <h3 class="font-semibold text-lg mb-2">Fast Pipeline</h3>
-          <p class="text-gray-400 text-sm">Download, transcribe, sync, and package — fully automated in one click.</p>
+          <h3 class="font-semibold text-lg mb-2">Szybki pipeline</h3>
+          <p class="text-gray-400 text-sm">Pobieranie, transkrypcja, synchronizacja i pakowanie — w pełni zautomatyzowane jednym kliknięciem.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">🔒</div>
-          <h3 class="font-semibold text-lg mb-2">Privacy First</h3>
-          <p class="text-gray-400 text-sm">Your audio never leaves your computer. All processing happens locally.</p>
+          <h3 class="font-semibold text-lg mb-2">Prywatność na pierwszym miejscu</h3>
+          <p class="text-gray-400 text-sm">Twoje audio nigdy nie opuszcza komputera. Całe przetwarzanie odbywa się lokalnie.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3">🔄</div>
-          <h3 class="font-semibold text-lg mb-2">Auto Updates</h3>
-          <p class="text-gray-400 text-sm">Silent background updates keep you on the latest version automatically.</p>
+          <h3 class="font-semibold text-lg mb-2">Automatyczne aktualizacje</h3>
+          <p class="text-gray-400 text-sm">Ciche aktualizacje w tle utrzymują Cię na najnowszej wersji automatycznie.</p>
         </div>
 
       </div>
@@ -125,9 +125,9 @@
   </section>
 
   <!-- How it works -->
-  <section id="how-it-works" class="py-20 px-6 bg-gray-900/50">
+  <section id="jak-to-dziala" class="py-20 px-6 bg-gray-900/50">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-14">How it works</h2>
+      <h2 class="text-3xl font-bold mb-14">Jak to działa</h2>
       <div class="relative">
         <div class="absolute left-1/2 top-6 bottom-6 w-px bg-gradient-to-b from-purple-600 to-pink-600 -translate-x-1/2 hidden sm:block"></div>
         <div class="space-y-10">
@@ -135,40 +135,40 @@
           <div class="flex items-start gap-6 text-left">
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">1</div>
             <div class="pt-2">
-              <h3 class="font-semibold text-lg mb-1">Paste a YouTube URL</h3>
-              <p class="text-gray-400 text-sm">Any song video — Karafy downloads the audio automatically using yt-dlp.</p>
+              <h3 class="font-semibold text-lg mb-1">Wklej link YouTube</h3>
+              <p class="text-gray-400 text-sm">Dowolny teledysk — Karafy pobiera audio automatycznie za pomocą yt-dlp.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-6 text-left">
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">2</div>
             <div class="pt-2">
-              <h3 class="font-semibold text-lg mb-1">Vocals separated</h3>
-              <p class="text-gray-400 text-sm">audio-separator splits the track into vocals and clean instrumental — Whisper transcribes on the clean vocal track for better accuracy.</p>
+              <h3 class="font-semibold text-lg mb-1">Separacja wokalu</h3>
+              <p class="text-gray-400 text-sm">audio-separator dzieli ścieżkę na wokal i czysty podkład — Whisper transkrybuje na czystej ścieżce wokalnej dla lepszej dokładności.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-6 text-left">
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">3</div>
             <div class="pt-2">
-              <h3 class="font-semibold text-lg mb-1">AI transcribes &amp; fetches lyrics</h3>
-              <p class="text-gray-400 text-sm">Whisper generates word-level timestamps; lyrics are fetched from the web and used to correct the transcription.</p>
+              <h3 class="font-semibold text-lg mb-1">AI transkrybuje i pobiera tekst</h3>
+              <p class="text-gray-400 text-sm">Whisper generuje znaczniki czasu na poziomie słów; tekst jest pobierany z sieci i używany do korekty transkrypcji.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-6 text-left">
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">4</div>
             <div class="pt-2">
-              <h3 class="font-semibold text-lg mb-1">Lyrics get synced</h3>
-              <p class="text-gray-400 text-sm">Each word is aligned to the music. You can preview and fine-tune in the built-in editor.</p>
+              <h3 class="font-semibold text-lg mb-1">Synchronizacja tekstu</h3>
+              <p class="text-gray-400 text-sm">Każde słowo jest wyrównane do muzyki. Możesz podejrzeć i doprecyzować w wbudowanym edytorze.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-6 text-left">
             <div class="shrink-0 w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center font-bold text-lg z-10">5</div>
             <div class="pt-2">
-              <h3 class="font-semibold text-lg mb-1">Export both versions</h3>
-              <p class="text-gray-400 text-sm">Download KFN with original audio and a "(karaoke)" KFN with clean instrumental — plus CDG+MP3 and LRC.</p>
+              <h3 class="font-semibold text-lg mb-1">Eksport obu wersji</h3>
+              <p class="text-gray-400 text-sm">Pobierz KFN z oryginalnym audio i KFN "(karaoke)" z czystym podkładem — plus CDG+MP3 i LRC.</p>
             </div>
           </div>
 
@@ -180,33 +180,33 @@
   <!-- Pricing -->
   <section class="py-20 px-6 bg-gray-950">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Free &amp; Pro</h2>
-      <p class="text-gray-400 mb-14">Start for free. Upgrade once for lifetime access.</p>
+      <h2 class="text-3xl font-bold mb-4">Bezpłatny i Pro</h2>
+      <p class="text-gray-400 mb-14">Zacznij za darmo. Kup raz na całe życie.</p>
       <div class="grid sm:grid-cols-2 gap-6">
 
         <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 text-left">
-          <div class="text-xl font-bold mb-1">Free</div>
+          <div class="text-xl font-bold mb-1">Bezpłatny</div>
           <div class="text-3xl font-extrabold mb-6">$0</div>
           <ul class="space-y-3 text-sm text-gray-300">
-            <li class="flex gap-2"><span class="text-green-400">✓</span> 5 songs per month</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Local AI transcription</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> KFN / CDG / LRC export</li>
-            <li class="flex gap-2"><span class="text-gray-500">✗</span> Watermark on CDG frames</li>
-            <li class="flex gap-2"><span class="text-gray-500">✗</span> Large AI models</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> 5 piosenek miesięcznie</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Lokalna transkrypcja AI</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Eksport KFN / CDG / LRC</li>
+            <li class="flex gap-2"><span class="text-gray-500">✗</span> Znak wodny na klatkach CDG</li>
+            <li class="flex gap-2"><span class="text-gray-500">✗</span> Duże modele AI</li>
           </ul>
         </div>
 
         <div class="bg-gradient-to-br from-purple-900/60 to-pink-900/30 border border-purple-700/60 rounded-2xl p-8 text-left relative">
-          <div class="absolute top-4 right-4 text-xs bg-purple-600 px-2.5 py-1 rounded-full font-medium">Lifetime</div>
+          <div class="absolute top-4 right-4 text-xs bg-purple-600 px-2.5 py-1 rounded-full font-medium">Dożywotni</div>
           <div class="text-xl font-bold mb-1">Pro</div>
-          <div class="text-3xl font-extrabold mb-2">$19.99 <span class="text-lg text-gray-400 font-normal">once</span></div>
-          <div class="text-xs text-yellow-400 font-medium mb-4">⚡ Early Bird price — limited time</div>
+          <div class="text-3xl font-extrabold mb-2">$19.99 <span class="text-lg text-gray-400 font-normal">jednorazowo</span></div>
+          <div class="text-xs text-yellow-400 font-medium mb-4">⚡ Cena Early Bird — przez ograniczony czas</div>
           <ul class="space-y-3 text-sm text-gray-300">
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Unlimited songs</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> All AI models (large, turbo)</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> No watermark</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Priority support</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> All future updates</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Nielimitowane piosenki</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Wszystkie modele AI (large, turbo)</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Bez znaku wodnego</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Priorytetowe wsparcie</li>
+            <li class="flex gap-2"><span class="text-green-400">✓</span> Wszystkie przyszłe aktualizacje</li>
           </ul>
         </div>
 
@@ -217,9 +217,9 @@
   <!-- Changelog -->
   <section class="py-20 px-6 bg-gray-900/50">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-14">Changelog</h2>
+      <h2 class="text-3xl font-bold text-center mb-14">Historia zmian</h2>
       <div id="changelog" class="space-y-4">
-        <p class="text-gray-500 text-center">Loading releases…</p>
+        <p class="text-gray-500 text-center">Ładowanie wydań…</p>
       </div>
     </div>
   </section>
@@ -227,13 +227,13 @@
   <!-- Download CTA -->
   <section class="py-24 px-6 text-center bg-gray-950">
     <div class="max-w-xl mx-auto">
-      <h2 class="text-4xl font-extrabold mb-4">Ready to make karaoke?</h2>
-      <p class="text-gray-400 mb-8">Free download. No account required.</p>
+      <h2 class="text-4xl font-extrabold mb-4">Gotowy na karaoke?</h2>
+      <p class="text-gray-400 mb-8">Bezpłatne pobieranie. Bez rejestracji.</p>
       <a id="cta-download" href="#" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
         </svg>
-        Download Karafy for Windows
+        Pobierz Karafy na Windows
       </a>
       <p id="cta-version" class="text-sm text-gray-600 mt-3"></p>
     </div>
@@ -241,7 +241,7 @@
 
   <!-- Footer -->
   <footer class="border-t border-gray-800 py-8 px-6 text-center text-sm text-gray-500">
-    <p>Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
+    <p>Karafy · Windows 10/11 · Stworzone z ❤️ i Whisper AI</p>
   </footer>
 
   <script>
@@ -267,13 +267,13 @@
         const version = latest.tag_name;
         const downloadUrl = latest.assets?.find(a => a.name === 'Karafy-win-Setup.exe')?.browser_download_url ?? SETUP_URL;
 
-        document.getElementById('hero-version').textContent = `Latest: ${version}`;
+        document.getElementById('hero-version').textContent = `Najnowsza: ${version}`;
         document.getElementById('cta-version').textContent = `${version} · Windows 10/11 · ~120 MB`;
         setDownloadLinks(downloadUrl);
 
         const changelog = document.getElementById('changelog');
         changelog.innerHTML = releases.map(r => {
-          const date = new Date(r.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+          const date = new Date(r.published_at).toLocaleDateString('pl-PL', { year: 'numeric', month: 'short', day: 'numeric' });
           const notes = (r.body ?? '')
             .split('\n')
             .filter(l => l.trim())
@@ -286,13 +286,13 @@
                 <span class="font-semibold text-purple-300">${escapeHtml(r.tag_name)}</span>
                 <span class="text-xs text-gray-500">${date}</span>
               </div>
-              ${notes ? `<ul class="space-y-1 list-disc list-inside">${notes}</ul>` : '<p class="text-gray-500 text-sm">No release notes.</p>'}
+              ${notes ? `<ul class="space-y-1 list-disc list-inside">${notes}</ul>` : '<p class="text-gray-500 text-sm">Brak informacji o wydaniu.</p>'}
             </div>`;
         }).join('');
       } catch {
         setDownloadLinks(SETUP_URL);
-        document.getElementById('hero-version').textContent = 'Download for Windows';
-        document.getElementById('changelog').innerHTML = '<p class="text-gray-500 text-center">Could not load releases.</p>';
+        document.getElementById('hero-version').textContent = 'Pobierz na Windows';
+        document.getElementById('changelog').innerHTML = '<p class="text-gray-500 text-center">Nie można załadować wydań.</p>';
       }
     }
 
