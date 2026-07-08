@@ -224,6 +224,7 @@
         </div>
 
       </div>
+      <p class="text-gray-500 text-sm mt-8">Need more cloud credits? Top up anytime with a 50-credit pack for $12.99 — no subscription required, in the app's License window.</p>
     </div>
   </section>
 
@@ -290,9 +291,11 @@
         changelog.innerHTML = releases.map(r => {
           const date = new Date(r.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
           const notes = (r.body ?? '')
+            .split(/\n---/)[0]
             .split('\n')
-            .filter(l => l.trim())
-            .slice(0, 5)
+            .map(l => l.trim())
+            .filter(l => l.startsWith('-') || l.startsWith('*'))
+            .slice(0, 8)
             .map(l => `<li class="text-gray-400 text-sm">${escapeHtml(l.replace(/^[-*]\s*/, ''))}</li>`)
             .join('');
           return `

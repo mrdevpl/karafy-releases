@@ -224,6 +224,7 @@
         </div>
 
       </div>
+      <p class="text-gray-500 text-sm mt-8">Potrzebujesz więcej kredytów w chmurze? Dokup pakiet 50 kredytów za $12.99 w dowolnym momencie — bez subskrypcji, w oknie licencji w aplikacji.</p>
     </div>
   </section>
 
@@ -290,9 +291,11 @@
         changelog.innerHTML = releases.map(r => {
           const date = new Date(r.published_at).toLocaleDateString('pl-PL', { year: 'numeric', month: 'short', day: 'numeric' });
           const notes = (r.body ?? '')
+            .split(/\n---/)[0]
             .split('\n')
-            .filter(l => l.trim())
-            .slice(0, 5)
+            .map(l => l.trim())
+            .filter(l => l.startsWith('-') || l.startsWith('*'))
+            .slice(0, 8)
             .map(l => `<li class="text-gray-400 text-sm">${escapeHtml(l.replace(/^[-*]\s*/, ''))}</li>`)
             .join('');
           return `
