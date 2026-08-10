@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karafy — Privacy Policy</title>
+  <meta name="description" content="How Karafy collects, uses, and protects your data." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <a href="/pl/privacy.html" class="text-sm text-gray-400 hover:text-white transition">PL</a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
+    <h1 class="text-4xl font-extrabold mb-2">Privacy <span class="gradient-text">Policy</span></h1>
+    <p class="text-gray-500 mb-12">Last updated: August 10, 2026</p>
+
+    <div class="space-y-10 text-gray-300 leading-relaxed">
+
+      <section>
+        <p>Karafy ("we", "us") turns YouTube links into karaoke files. This page explains what
+        data the desktop app and its server collect, why, and what rights you have over it.
+        Most of what Karafy does happens entirely on your own computer and never reaches us at
+        all — the sections below spell out exactly which parts do.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">1. Who we are</h2>
+        <p>The data controller is <strong>GemuStudio Krzysztof Owsiany</strong>. For any privacy
+        question or request, contact <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300">krzysztof@mrdev.pl</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">2. What we collect, and why</h2>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Local mode (default)</h3>
+        <p>Karafy downloads the YouTube audio, transcribes it, and separates vocals entirely on
+        your own machine. Your audio, generated files, and job history never leave your
+        computer — nothing is uploaded anywhere in local mode.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">License activation</h3>
+        <p>Activating a Pro license or credit pack sends your license key and your Windows
+        computer name to Lemon Squeezy (our payment provider) to verify the license, and your
+        license key and an instance identifier (no computer name) to our server to issue a short-lived access token.
+        We never see or store your name, email, or payment details — Lemon Squeezy handles
+        checkout, billing, and invoicing as the Merchant of Record.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Cloud processing (opt-in)</h3>
+        <p>If you choose cloud-accelerated processing (spending cloud credits), your audio file
+        is uploaded to our server and forwarded to OpenAI (transcription and lyrics correction)
+        or RunPod (vocal separation). Uploaded audio is deleted as soon as processing finishes.
+        For vocal separation, the resulting instrumental track is deleted as soon as your app
+        downloads it. The resulting transcript text is kept on our server for up
+        to 30 days to support retries and troubleshooting, then automatically deleted.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Lyrics lookup</h3>
+        <p>To fetch lyrics, we send the song title and artist name (only) to Genius and LRCLIB,
+        two public lyrics databases. No other data is sent.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Diagnostic error reports</h3>
+        <p>To help us fix crashes and failures faster, Karafy automatically sends a diagnostic
+        report — a random device identifier, your app version, OS info, the error itself, and
+        that session's log file — when it hits an unhandled crash, a failed job, or a failed
+        cloud request. Your Windows username is removed from this report, and your license key is masked (only the last few characters are visible) before it's sent. <strong>This is on by default</strong>; you can turn it off anytime in
+        the app's About window, or send one manually with the "Send log now" button. Reports are
+        kept for 90 days, then automatically deleted.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Automatic updates</h3>
+        <p>Karafy checks GitHub for new releases and downloads updates automatically. This is a
+        plain version check — no personal data is sent beyond what GitHub itself logs as
+        standard web server access, which is outside our control.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">3. Who we share data with</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Lemon Squeezy</strong> — payment processing and license validation (Merchant of Record)</li>
+          <li><strong>OpenAI</strong> — cloud transcription and lyrics correction, only for jobs you choose to run in the cloud</li>
+          <li><strong>RunPod</strong> — cloud vocal separation, only for jobs you choose to run in the cloud</li>
+          <li><strong>GitHub</strong> — hosts app updates and this website</li>
+          <li><strong>Seq</strong> — internal log viewer used by us to operate the service; not user-facing, receives operational logs (not raw audio or lyrics)</li>
+        </ul>
+        <p class="mt-3">We don't sell your data, and we don't use any third-party analytics or
+        advertising trackers on this site or in the app.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">4. Legal basis</h2>
+        <p>We process license and payment data to perform the contract when you buy Pro or
+        credits. We process diagnostic error reports and cloud processing data based on our
+        legitimate interest in keeping Karafy working reliably — you can object to diagnostic
+        reporting at any time by turning it off in the About window.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">5. How long we keep data</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Local job history, generated files, settings: kept on your machine until you delete them — we never see this data</li>
+          <li>Uploaded audio for cloud processing: deleted immediately after processing</li>
+          <li>Separated instrumental audio: deleted as soon as your app downloads it</li>
+          <li>Cloud transcription results (text): 30 days, then automatically deleted</li>
+          <li>Diagnostic error reports: 90 days, then automatically deleted</li>
+          <li>Credit balance and license key: kept for the life of your license, to track your entitlements</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">6. International transfers</h2>
+        <p>If you use cloud processing, your audio is processed by OpenAI and RunPod, which may
+        process data outside the European Economic Area. Both providers offer standard
+        contractual safeguards for international transfers.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">7. Your rights</h2>
+        <p>Under GDPR, you have the right to access, correct, delete, restrict, or export the
+        data we hold about you, and to object to processing based on our legitimate interest.
+        Since most Karafy data lives only on your own computer, most of these rights are already
+        entirely in your hands — for anything held on our server (license/credits, cloud job
+        history, diagnostic reports), email <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300">krzysztof@mrdev.pl</a>
+        and we'll act on your request.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">8. Changes to this policy</h2>
+        <p>If this policy changes materially, we'll update the "last updated" date above. We
+        encourage you to check back occasionally.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-800 py-8 px-6 text-center text-sm text-gray-500">
+    <p>Karafy · <a href="/" class="hover:text-white transition">Back to home</a></p>
+  </footer>
+</body>
+</html>
