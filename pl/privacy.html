@@ -86,6 +86,14 @@
         wysłać raport ręcznie przyciskiem „Wyślij log teraz". Raporty są przechowywane przez
         90 dni, po czym są automatycznie usuwane.</p>
 
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Analityka użytkowania</h3>
+        <p>Karafy wysyła podstawowe zdarzenia użytkowania — uruchomienie aplikacji, utworzenie
+        zadania karaoke, aktywację licencji — do PostHog (hostowanego w UE), oznaczone tym samym
+        losowym identyfikatorem urządzenia co raporty diagnostyczne, wraz z ogólnymi właściwościami
+        takimi jak plan, wersja aplikacji i język. Pomaga nam to zrozumieć, ile osób korzysta z
+        Karafy i do czego. Jest to powiązane z <strong>tym samym przełącznikiem</strong> co raporty
+        diagnostyczne w oknie „O aplikacji" — wyłączenie go zatrzymuje oba.</p>
+
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Automatyczne aktualizacje</h3>
         <p>Karafy sprawdza w GitHub dostępność nowych wydań i pobiera aktualizacje automatycznie.
         To zwykłe sprawdzenie wersji — żadne dane osobowe nie są wysyłane poza tym, co GitHub
@@ -100,17 +108,19 @@
           <li><strong>RunPod</strong> — separacja wokalu w chmurze, tylko dla zadań uruchomionych w chmurze</li>
           <li><strong>GitHub</strong> — hostuje aktualizacje aplikacji i tę stronę</li>
           <li><strong>Seq</strong> — wewnętrzne narzędzie do przeglądania logów, którego używamy do obsługi usługi; nie jest widoczne dla użytkowników, otrzymuje logi operacyjne (nie surowe audio ani teksty piosenek)</li>
+          <li><strong>PostHog (UE)</strong> — podstawowa analityka użytkowania (uruchomienie aplikacji, utworzenie zadania, aktywacja licencji), oznaczona losowym identyfikatorem urządzenia, bez Twojego imienia ani e-maila</li>
         </ul>
-        <p class="mt-3">Nie sprzedajemy Twoich danych i nie korzystamy z żadnych zewnętrznych
-        narzędzi analitycznych ani reklamowych na tej stronie ani w aplikacji.</p>
+        <p class="mt-3">Nie sprzedajemy Twoich danych i nie korzystamy z żadnych narzędzi
+        reklamowych na tej stronie ani w aplikacji.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">4. Podstawa prawna</h2>
         <p>Dane licencyjne i płatnicze przetwarzamy w celu wykonania umowy przy zakupie Pro lub
-        kredytów. Raporty diagnostyczne i dane przetwarzania w chmurze przetwarzamy na podstawie
-        naszego prawnie uzasadnionego interesu w utrzymaniu niezawodnego działania Karafy —
-        możesz w każdej chwili sprzeciwić się raportowaniu diagnostycznemu, wyłączając je w
+        kredytów. Raporty diagnostyczne, analitykę użytkowania i dane przetwarzania w chmurze
+        przetwarzamy na podstawie naszego prawnie uzasadnionego interesu w utrzymaniu niezawodnego
+        działania Karafy i zrozumieniu jego wykorzystania — możesz w każdej chwili sprzeciwić się
+        raportowaniu diagnostycznemu i analityce użytkowania, wyłączając wspólny przełącznik w
         oknie „O aplikacji".</p>
       </section>
 
@@ -122,6 +132,7 @@
           <li>Wynikowy podkład instrumentalny z separacji wokalu: kasowany od razu po pobraniu przez aplikację</li>
           <li>Wyniki transkrypcji w chmurze (tekst): 30 dni, potem automatyczne usunięcie</li>
           <li>Raporty diagnostyczne błędów: 90 dni, potem automatyczne usunięcie</li>
+          <li>Zdarzenia analityki użytkowania: przechowywane w PostHog zgodnie z ich standardową polityką retencji</li>
           <li>Saldo kredytów i klucz licencyjny: przez cały okres ważności licencji, w celu śledzenia uprawnień</li>
         </ul>
       </section>

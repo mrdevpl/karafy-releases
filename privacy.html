@@ -81,6 +81,14 @@
         the app's About window, or send one manually with the "Send log now" button. Reports are
         kept for 90 days, then automatically deleted.</p>
 
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Usage analytics</h3>
+        <p>Karafy sends basic usage events — the app launching, a karaoke job being created, a
+        license being activated — to PostHog (hosted in the EU), tagged with the same random
+        device identifier used for diagnostic reports, along with coarse properties like your
+        plan, app version, and language. This helps us understand how many people use Karafy and
+        what they use it for. It's tied to the <strong>same toggle</strong> as diagnostic error
+        reports in the About window — turning that off stops both.</p>
+
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Automatic updates</h3>
         <p>Karafy checks GitHub for new releases and downloads updates automatically. This is a
         plain version check — no personal data is sent beyond what GitHub itself logs as
@@ -95,17 +103,19 @@
           <li><strong>RunPod</strong> — cloud vocal separation, only for jobs you choose to run in the cloud</li>
           <li><strong>GitHub</strong> — hosts app updates and this website</li>
           <li><strong>Seq</strong> — internal log viewer used by us to operate the service; not user-facing, receives operational logs (not raw audio or lyrics)</li>
+          <li><strong>PostHog (EU)</strong> — basic usage analytics (app launched, job created, license activated), tagged with a random device identifier, not your name or email</li>
         </ul>
-        <p class="mt-3">We don't sell your data, and we don't use any third-party analytics or
-        advertising trackers on this site or in the app.</p>
+        <p class="mt-3">We don't sell your data, and we don't use any advertising trackers on
+        this site or in the app.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">4. Legal basis</h2>
         <p>We process license and payment data to perform the contract when you buy Pro or
-        credits. We process diagnostic error reports and cloud processing data based on our
-        legitimate interest in keeping Karafy working reliably — you can object to diagnostic
-        reporting at any time by turning it off in the About window.</p>
+        credits. We process diagnostic error reports, usage analytics, and cloud processing data
+        based on our legitimate interest in keeping Karafy working reliably and understanding how
+        it's used — you can object to diagnostic reporting and usage analytics at any time by
+        turning off the shared toggle in the About window.</p>
       </section>
 
       <section>
@@ -116,6 +126,7 @@
           <li>Separated instrumental audio: deleted as soon as your app downloads it</li>
           <li>Cloud transcription results (text): 30 days, then automatically deleted</li>
           <li>Diagnostic error reports: 90 days, then automatically deleted</li>
+          <li>Usage analytics events: kept in PostHog under their standard retention policy</li>
           <li>Credit balance and license key: kept for the life of your license, to track your entitlements</li>
         </ul>
       </section>
