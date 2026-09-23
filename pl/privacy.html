@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karafy — Polityka prywatności</title>
   <meta name="description" content="Jak Karafy zbiera, wykorzystuje i chroni Twoje dane." />
+
+  <link rel="canonical" href="https://karafy.app/pl/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://karafy.app/privacy.html" />
+  <link rel="alternate" hreflang="pl" href="https://karafy.app/pl/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://karafy.app/privacy.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -34,7 +41,7 @@
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
       <section>
-        <p>Karafy ("my") zamienia linki YouTube w pliki karaoke. Ta strona wyjaśnia, jakie dane
+        <p>Karafy ("my") zamienia utwory w pliki karaoke. Ta strona wyjaśnia, jakie dane
         zbiera aplikacja desktopowa i jej serwer, po co, i jakie masz nad nimi prawa. Większość
         działania Karafy odbywa się wyłącznie na Twoim komputerze i w ogóle do nas nie trafia —
         poniższe sekcje dokładnie wskazują, które elementy jednak trafiają.</p>
@@ -50,16 +57,16 @@
         <h2 class="text-2xl font-bold text-white mb-3">2. Co zbieramy i po co</h2>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Tryb lokalny (domyślny)</h3>
-        <p>Karafy pobiera audio z YouTube, transkrybuje je i oddziela wokal wyłącznie na Twoim
+        <p>Karafy wczytuje audio, transkrybuje je i oddziela wokal wyłącznie na Twoim
         komputerze. Twoje audio, wygenerowane pliki i historia zadań nigdy nie opuszczają
         komputera — w trybie lokalnym nic nie jest nigdzie wysyłane.</p>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Aktywacja licencji</h3>
         <p>Aktywacja licencji Pro lub pakietu kredytów wysyła Twój klucz licencyjny i nazwę
-        komputera z Windows do Lemon Squeezy (nasz dostawca płatności) w celu weryfikacji
+        komputera z Windows do Polar (nasz dostawca płatności) w celu weryfikacji
         licencji, oraz klucz licencyjny i identyfikator instancji (bez nazwy komputera) do
         naszego serwera w celu wydania krótkoterminowego tokenu dostępu. Nigdy nie widzimy ani nie przechowujemy
-        Twojego imienia, e-maila ani danych płatności — Lemon Squeezy obsługuje zakup,
+        Twojego imienia, e-maila ani danych płatności — Polar obsługuje zakup,
         rozliczenia i faktury jako Merchant of Record.</p>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Przetwarzanie w chmurze (opcjonalne)</h3>
@@ -94,6 +101,14 @@
         Karafy i do czego. Jest to powiązane z <strong>tym samym przełącznikiem</strong> co raporty
         diagnostyczne w oknie „O aplikacji" — wyłączenie go zatrzymuje oba.</p>
 
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Analityka strony internetowej</h3>
+        <p>Ta strona wysyła odsłony i kliknięcia w przycisk pobierania do tego samego projektu
+        PostHog (UE). Działa <strong>bez plików cookie</strong> i bez pamięci przeglądarki — nic
+        nie zostaje na Twoim urządzeniu pomiędzy wczytaniami strony, więc nie jesteśmy w stanie
+        rozpoznać Cię przy kolejnej wizycie. Nie zbieramy Twojego adresu IP do profilowania, nie
+        nagrywamy ekranu i nie stosujemy żadnych narzędzi reklamowych ani śledzących między
+        stronami. Dlatego ta strona nie pokazuje banera cookies — nie ma tu na co wyrażać zgody.</p>
+
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Automatyczne aktualizacje</h3>
         <p>Karafy sprawdza w GitHub dostępność nowych wydań i pobiera aktualizacje automatycznie.
         To zwykłe sprawdzenie wersji — żadne dane osobowe nie są wysyłane poza tym, co GitHub
@@ -103,12 +118,12 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">3. Komu udostępniamy dane</h2>
         <ul class="list-disc pl-6 space-y-1">
-          <li><strong>Lemon Squeezy</strong> — obsługa płatności i weryfikacja licencji (Merchant of Record)</li>
+          <li><strong>Polar</strong> — obsługa płatności i weryfikacja licencji (Merchant of Record)</li>
           <li><strong>OpenAI</strong> — transkrypcja i korekta tekstu w chmurze, tylko dla zadań uruchomionych w chmurze</li>
           <li><strong>RunPod</strong> — separacja wokalu w chmurze, tylko dla zadań uruchomionych w chmurze</li>
           <li><strong>GitHub</strong> — hostuje aktualizacje aplikacji i tę stronę</li>
           <li><strong>Seq</strong> — wewnętrzne narzędzie do przeglądania logów, którego używamy do obsługi usługi; nie jest widoczne dla użytkowników, otrzymuje logi operacyjne (nie surowe audio ani teksty piosenek)</li>
-          <li><strong>PostHog (UE)</strong> — podstawowa analityka użytkowania (uruchomienie aplikacji, utworzenie zadania, aktywacja licencji), oznaczona losowym identyfikatorem urządzenia, bez Twojego imienia ani e-maila</li>
+          <li><strong>PostHog (UE)</strong> — podstawowa analityka użytkowania: w aplikacji (uruchomienie aplikacji, utworzenie zadania, aktywacja licencji), oznaczona losowym identyfikatorem urządzenia; na tej stronie (odsłony, kliknięcia w pobieranie), bez cookies i bez zapisanego identyfikatora. Nigdy bez Twojego imienia ani e-maila</li>
         </ul>
         <p class="mt-3">Nie sprzedajemy Twoich danych i nie korzystamy z żadnych narzędzi
         reklamowych na tej stronie ani w aplikacji.</p>

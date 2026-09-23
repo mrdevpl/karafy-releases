@@ -3,12 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karafy — YouTube to Karaoke</title>
-  <meta name="description" content="Turn any YouTube link into a karaoke file with AI-synced lyrics. Free Windows app." />
+  <title>Karaoke Maker for Windows — AI Synced Lyrics | Karafy</title>
+  <meta name="description" content="Turn any song into a karaoke file with word-by-word synced lyrics. Runs locally on your PC. Exports KFN, MP4, MP3+G and LRC. One-time price, no subscription." />
+
+  <link rel="canonical" href="https://karafy.app/" />
+  <link rel="alternate" hreflang="en" href="https://karafy.app/" />
+  <link rel="alternate" hreflang="pl" href="https://karafy.app/pl/" />
+  <link rel="alternate" hreflang="x-default" href="https://karafy.app/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Karafy" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pl_PL" />
+  <meta property="og:url" content="https://karafy.app/" />
+  <meta property="og:title" content="Turn any song into karaoke — on your own PC" />
+  <meta property="og:description" content="Karafy separates the vocals, transcribes the lyrics with AI and syncs them word by word. Exports KFN, MP4, MP3+G and LRC. No subscription." />
+  <meta property="og:image" content="https://karafy.app/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Turn any song into karaoke — on your own PC" />
+  <meta name="twitter:description" content="Vocals separated, lyrics synced word by word. KFN, MP4, MP3+G, LRC. No subscription." />
+  <meta name="twitter:image" content="https://karafy.app/og-cover.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     .gradient-text {
       background: linear-gradient(135deg, #a855f7, #ec4899);
       -webkit-background-clip: text;
@@ -22,57 +47,145 @@
       box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Karafy",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "url": "https://karafy.app/",
+    "downloadUrl": "https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe",
+    "description": "Turns any song into a karaoke file with AI word-level synced lyrics. Runs locally. Exports KFN, MP4, MP3+G and LRC.",
+    "publisher": { "@type": "Organization", "name": "GemuStudio Krzysztof Owsiany" },
+    "offers": [
+      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Pro Lifetime", "price": "19.99", "priceCurrency": "USD" }
+    ]
+  }
+  </script>
+
+  <!--
+    Analytics — same PostHog EU project the desktop app reports to, so site and app
+    events land side by side (download_click -> app_launched -> job_created).
+    Cookieless on purpose (persistence: memory): no cookies, no localStorage, so the
+    page needs no consent banner. Trade-off: a returning visitor counts as new.
+    phc_* is a public client-side project key, not a secret.
+  -->
+  <script src="https://eu-assets.i.posthog.com/static/array.js" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (!window.posthog || typeof posthog.init !== 'function') return;
+      posthog.init('phc_no5KeCF5R2EJKAKUFCP3ES2b74ovfibguBu2WQxZZN52', {
+        api_host: 'https://eu.i.posthog.com',
+        persistence: 'memory',
+        autocapture: false,
+        capture_pageview: true,
+        // Everything below is off on purpose. Without these the project's remote config
+        // pulls extra bundles (surveys, dead-click autocapture, web vitals) and can render
+        // UI on the page — we only want page views and explicit clicks.
+        disable_session_recording: true,
+        disable_surveys: true,
+        capture_dead_clicks: false,
+        capture_performance: false,
+        advanced_disable_feature_flags: true,
+        // Stops the remote-config call itself. Without it the project's server-side
+        // settings still pull the dead-click bundle even though it's disabled here.
+        advanced_disable_decide: true
+      });
+    });
+  </script>
 </head>
 <body class="bg-gray-950 text-gray-100">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-purple-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
 
   <!-- Nav -->
   <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
     <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-      <span class="font-bold text-lg tracking-tight">Karafy
-        <span class="align-top text-[10px] font-semibold text-purple-300 bg-purple-900/50 border border-purple-700/40 rounded-full px-1.5 py-0.5 ml-1">BETA</span>
-      </span>
-      <div class="flex items-center gap-3">
-        <a href="/pl/" class="text-sm text-gray-400 hover:text-white transition">PL</a>
-        <a id="nav-download" href="#" class="text-sm bg-purple-600 hover:bg-purple-500 px-4 py-1.5 rounded-full font-medium transition">
+      <a href="/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <div class="flex items-center gap-4">
+        <a href="#pricing" class="hidden sm:inline text-sm text-gray-400 hover:text-white transition">Pricing</a>
+        <a href="#faq" class="hidden sm:inline text-sm text-gray-400 hover:text-white transition">FAQ</a>
+        <a href="/pl/" hreflang="pl" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition" aria-label="Przełącz na polski">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zM3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18 15 15 0 010-18z"/>
+          </svg>
+          Polski
+        </a>
+        <a id="nav-download" href="https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe" class="text-sm bg-purple-600 hover:bg-purple-500 px-4 py-1.5 rounded-full font-medium transition">
           Download
         </a>
       </div>
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- Hero -->
   <section class="hero-bg pt-32 pb-24 px-6 text-center">
     <div class="max-w-3xl mx-auto">
       <div class="inline-flex items-center gap-2 bg-purple-900/40 border border-purple-700/40 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-8">
-        <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
-        <span id="hero-version">Loading latest version…</span>
-        <span class="text-purple-400">·</span>
-        <span>Beta — actively evolving, feedback welcome</span>
+        <span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse" aria-hidden="true"></span>
+        <span id="hero-version">Beta — Pro is $19.99 instead of $29, and the price stays yours forever</span>
       </div>
 
-      <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
-        YouTube link →<br/>
-        <span class="gradient-text">Karaoke file</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.15] mb-5 text-balance">
+        Turn any song into <span class="gradient-text">karaoke</span>
+        <span class="block text-2xl sm:text-3xl font-bold text-gray-300 mt-4">right on your own PC</span>
       </h1>
 
-      <p class="text-xl text-gray-400 mb-10 max-w-xl mx-auto">
-        Paste a YouTube URL. Karafy separates vocals, fetches and transcribes lyrics,
-        syncs them to the audio, and exports both a karaoke version and a clean instrumental track.
+      <p class="text-xl text-gray-300 mb-6 max-w-xl mx-auto">
+        Start from an audio file you already have, or paste a link. Karafy separates
+        the vocals, transcribes the lyrics with AI
+        and syncs them word by word. Exports to KFN, MP4, MP3+G and LRC.
+      </p>
+
+      <p class="text-lg text-gray-400 mb-10">
+        No subscription. No song limits. Nothing leaves your computer.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a id="hero-download" href="#" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-8 py-3.5 rounded-xl text-lg transition">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a id="hero-download" href="https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe" class="inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-8 py-3.5 rounded-xl text-lg transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
           </svg>
           Download for Windows
         </a>
-        <a href="#how-it-works" class="inline-flex items-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 font-medium px-8 py-3.5 rounded-xl text-lg transition">
+        <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 font-medium px-8 py-3.5 rounded-xl text-lg transition">
           See how it works
         </a>
       </div>
 
-      <p class="text-sm text-gray-500 mt-4">Windows 10/11 · Free &amp; Pro</p>
+      <p id="hero-meta" class="text-sm text-gray-400 mt-4">Windows 10/11 · 85 MB · no account · 10 songs free</p>
+
+      <!--
+        TODO (highest-impact item on this page): replace this block with a 20–30 s
+        "before → after" clip — pasting the link, the progress bar, then the finished
+        karaoke MP4 with highlighted lyrics. Until it exists, the section stays hidden.
+      <div class="mt-12 rounded-2xl overflow-hidden border border-gray-800">
+        <video src="/demo.mp4" poster="/demo-poster.jpg" controls playsinline class="w-full"></video>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- Why Karafy -->
+  <section class="py-16 px-6 bg-gray-950 border-y border-gray-900">
+    <div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8 text-center">
+      <div>
+        <div class="text-2xl font-bold mb-1">Pay once</div>
+        <p class="text-gray-400 text-sm">A one-time $19.99 licence, not a monthly plan. Credits you buy never expire.</p>
+      </div>
+      <div>
+        <div class="text-2xl font-bold mb-1">Your files, your disk</div>
+        <p class="text-gray-400 text-sm">You get real files — KFN, MP4, MP3+G, LRC — not a track locked inside someone's web player.</p>
+      </div>
+      <div>
+        <div class="text-2xl font-bold mb-1">Works offline</div>
+        <p class="text-gray-400 text-sm">In local mode nothing is uploaded anywhere. The AI runs on your own machine.</p>
+      </div>
     </div>
   </section>
 
@@ -83,49 +196,55 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">🧠</div>
+          <div class="text-3xl mb-3" aria-hidden="true">📥</div>
+          <h3 class="font-semibold text-lg mb-2">Flexible input</h3>
+          <p class="text-gray-400 text-sm">Start from an audio or video file you already own — MP3, WAV, FLAC, M4A, MP4 — or paste a link, YouTube included. You are responsible for holding the rights to the music you process.</p>
+        </div>
+
+        <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
+          <div class="text-3xl mb-3" aria-hidden="true">🧠</div>
           <h3 class="font-semibold text-lg mb-2">Local AI Transcription</h3>
-          <p class="text-gray-400 text-sm">Powered by Whisper.net — runs entirely on your machine, no API keys required. Optional cloud mode available for faster processing.</p>
+          <p class="text-gray-400 text-sm">The AI runs entirely on your machine — no API keys, no account, no upload. An optional cloud mode is there when you want it faster.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">🎵</div>
-          <h3 class="font-semibold text-lg mb-2">More Export Formats</h3>
-          <p class="text-gray-400 text-sm">Now exports MP4 karaoke video and MP3+G (CD+G), alongside KFN and LRC — generate exactly the format you need, on demand.</p>
+          <div class="text-3xl mb-3" aria-hidden="true">🎵</div>
+          <h3 class="font-semibold text-lg mb-2">Formats other tools skip</h3>
+          <p class="text-gray-400 text-sm">KFN for karaoke players and MP3+G (CD+G) for karaoke hardware, alongside MP4 video and LRC — generated on demand.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">🎤</div>
+          <div class="text-3xl mb-3" aria-hidden="true">🎤</div>
           <h3 class="font-semibold text-lg mb-2">Vocal Separation</h3>
           <p class="text-gray-400 text-sm">Automatically splits the audio into vocals and instrumental. Exports two KFN files — one with the original track, one with clean backing — ready to sing along.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">📊</div>
+          <div class="text-3xl mb-3" aria-hidden="true">📊</div>
           <h3 class="font-semibold text-lg mb-2">Live Export Progress</h3>
           <p class="text-gray-400 text-sm">Real percentage progress while exporting MP4, vocals, or audio — know exactly how far along you are, no more guessing.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">✏️</div>
+          <div class="text-3xl mb-3" aria-hidden="true">✏️</div>
           <h3 class="font-semibold text-lg mb-2">Lyrics Editor</h3>
           <p class="text-gray-400 text-sm">Built-in editor to fix timing or lyrics before export. Split lines, adjust timestamps.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">⚡</div>
-          <h3 class="font-semibold text-lg mb-2">Fast Pipeline</h3>
-          <p class="text-gray-400 text-sm">Download, transcribe, sync, and package — fully automated in one click.</p>
+          <div class="text-3xl mb-3" aria-hidden="true">⚡</div>
+          <h3 class="font-semibold text-lg mb-2">One click, start to finish</h3>
+          <p class="text-gray-400 text-sm">Import, transcribe, sync, and package — fully automated in one click.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">🔒</div>
+          <div class="text-3xl mb-3" aria-hidden="true">🔒</div>
           <h3 class="font-semibold text-lg mb-2">Local by Default</h3>
           <p class="text-gray-400 text-sm">In local mode, your audio never leaves your computer. Cloud mode is opt-in, for when you want faster processing. <a href="/privacy.html" class="text-purple-400 hover:text-purple-300 underline">Privacy policy →</a></p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
-          <div class="text-3xl mb-3">🔄</div>
+          <div class="text-3xl mb-3" aria-hidden="true">🔄</div>
           <h3 class="font-semibold text-lg mb-2">Auto Updates</h3>
           <p class="text-gray-400 text-sm">Silent background updates keep you on the latest version automatically.</p>
         </div>
@@ -144,8 +263,8 @@
           <div class="flex items-start gap-6 text-left">
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">1</div>
             <div class="pt-2">
-              <h3 class="font-semibold text-lg mb-1">Paste a YouTube URL</h3>
-              <p class="text-gray-400 text-sm">Any song video — Karafy downloads the audio automatically using yt-dlp.</p>
+              <h3 class="font-semibold text-lg mb-1">Pick a file or paste a link</h3>
+              <p class="text-gray-400 text-sm">Open an audio or video file you already have, or paste a link — Karafy pulls the audio track automatically.</p>
             </div>
           </div>
 
@@ -153,7 +272,7 @@
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">2</div>
             <div class="pt-2">
               <h3 class="font-semibold text-lg mb-1">Vocals separated</h3>
-              <p class="text-gray-400 text-sm">audio-separator splits the track into vocals and clean instrumental — Whisper transcribes on the clean vocal track for better accuracy.</p>
+              <p class="text-gray-400 text-sm">The track is split into vocals and a clean instrumental — the AI then transcribes the isolated vocal for much better accuracy.</p>
             </div>
           </div>
 
@@ -161,7 +280,7 @@
             <div class="shrink-0 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-lg z-10">3</div>
             <div class="pt-2">
               <h3 class="font-semibold text-lg mb-1">AI transcribes &amp; fetches lyrics</h3>
-              <p class="text-gray-400 text-sm">Whisper generates word-level timestamps; lyrics are fetched from the web and used to correct the transcription.</p>
+              <p class="text-gray-400 text-sm">Word-level timestamps are generated, then checked against published lyrics to correct mishearings.</p>
             </div>
           </div>
 
@@ -186,66 +305,151 @@
     </div>
   </section>
 
+  <!-- Installing -->
+  <section class="py-16 px-6 bg-gray-950">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-3">A note about the install warning</h2>
+        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+          Karafy is not code-signed yet, so Windows shows a
+          <strong>"Windows protected your PC"</strong> screen the first time you run the installer.
+          That is Microsoft saying it doesn't recognise the publisher yet — not that anything is wrong
+          with the file. Click <strong>More info → Run anyway</strong>.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          A signing certificate is on the roadmap and will remove the warning. In the meantime
+          every build is published openly on
+          <a href="https://github.com/mrdevpl/karafy-releases/releases" class="text-purple-400 hover:text-purple-300 underline">GitHub Releases</a>,
+          so you can check the file yourself before running it.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
-  <section class="py-20 px-6 bg-gray-950">
+  <section id="pricing" class="py-20 px-6 bg-gray-950">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Free, Pro &amp; Credit Packs</h2>
-      <p class="text-gray-400 mb-14">Start for free. Upgrade once for unlimited local processing, or buy credits for cloud AI.</p>
+      <p class="text-gray-400 mb-4">Start for free. Buy Pro once for unlimited processing on your own PC, or add credits for cloud AI.</p>
+      <p class="text-gray-400 text-sm mb-14 max-w-2xl mx-auto">
+        <strong class="text-gray-300">Local vs cloud:</strong> local runs on your computer — free of charge but limited by your hardware.
+        Cloud is faster and more accurate, and is billed in credits. Pro unlocks unlimited <em>local</em> use; credits are only for cloud.
+      </p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 text-left">
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 text-left flex flex-col">
           <div class="text-xl font-bold mb-1">Free</div>
           <div class="text-3xl font-extrabold mb-6">$0</div>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li class="flex gap-2"><span class="text-green-400">✓</span> 10 local generations, one-time</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Local AI transcription</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> KFN / LRC export</li>
-            <li class="flex gap-2"><span class="text-gray-500">✗</span> Watermark on preview frames</li>
-            <li class="flex gap-2"><span class="text-gray-500">✗</span> Large AI models</li>
+          <ul class="space-y-3 text-sm text-gray-300 flex-1">
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> 10 karaoke songs free, one-time</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> Local AI transcription</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> KFN / LRC export</li>
+            <li class="flex gap-2"><span class="text-amber-400" aria-hidden="true">⚠</span> "Made with Karafy" watermark on preview frames</li>
+            <li class="flex gap-2"><span class="text-amber-400" aria-hidden="true">🔒</span> Large AI models are Pro only</li>
           </ul>
+          <a id="free-download" href="https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe" class="mt-6 block text-center border border-gray-700 hover:border-gray-500 text-gray-200 font-medium px-5 py-2.5 rounded-xl transition">
+            Download free
+          </a>
         </div>
 
-        <div class="bg-gradient-to-br from-purple-900/60 to-pink-900/30 border border-purple-700/60 rounded-2xl p-8 text-left relative">
+        <div class="bg-gradient-to-br from-purple-900/60 to-pink-900/30 border border-purple-700/60 rounded-2xl p-8 text-left relative flex flex-col">
           <div class="absolute top-4 right-4 text-xs bg-purple-600 px-2.5 py-1 rounded-full font-medium">Lifetime</div>
           <div class="text-xl font-bold mb-1">Pro</div>
           <div class="text-3xl font-extrabold mb-2">$19.99 <span class="text-lg text-gray-400 font-normal">once</span></div>
-          <div class="text-xs text-yellow-400 font-medium mb-4">⚡ Early Bird price — limited time</div>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Unlimited <strong>local</strong> processing</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> All AI models (large, turbo)</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> No watermark</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> +20 cloud credits included</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> All future updates</li>
+          <div class="text-xs text-yellow-400 font-medium mb-4">⚡ Early Bird — regular price $29</div>
+          <ul class="space-y-3 text-sm text-gray-300 flex-1">
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> Unlimited <strong>local</strong> processing</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> All AI models (large, turbo)</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> No watermark</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> +20 cloud credits included</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> All future updates</li>
           </ul>
-          <p class="text-xs text-gray-500 mt-4">Local processing only — cloud AI needs credits.</p>
+          <div id="buy-pro" class="mt-6">
+            <p class="text-center text-sm text-gray-300 border border-gray-700 rounded-xl px-5 py-2.5">Buy inside the app — License window</p>
+          </div>
+          <p class="text-xs text-gray-400 mt-3">Cloud AI is billed separately in credits.</p>
         </div>
 
-        <div class="bg-gradient-to-br from-indigo-900/60 to-purple-900/30 border border-indigo-700/60 rounded-2xl p-8 text-left relative">
+        <div class="bg-gradient-to-br from-indigo-900/60 to-purple-900/30 border border-indigo-700/60 rounded-2xl p-8 text-left relative flex flex-col">
           <div class="absolute top-4 right-4 text-xs bg-indigo-600 px-2.5 py-1 rounded-full font-medium">Cloud</div>
           <div class="text-xl font-bold mb-1">Credit Packs</div>
           <div class="text-3xl font-extrabold mb-6">from $19.99</div>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li class="flex gap-2"><span class="text-green-400">✓</span> 50 credits — $19.99</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> 200 credits — $59.99</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> 500 credits — $129.99</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Cloud-accelerated transcription (OpenAI Whisper)</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Higher-quality vocal separation model</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> AI lyrics correction (GPT-4o)</li>
-            <li class="flex gap-2"><span class="text-green-400">✓</span> Never expire</li>
+          <ul class="space-y-3 text-sm text-gray-300 flex-1">
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> 50 credits — $19.99</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> 200 credits — $59.99</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> 500 credits — $129.99</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> Cloud-accelerated transcription</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> Higher-quality vocal separation</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> AI lyrics correction</li>
+            <li class="flex gap-2"><span class="text-green-400" aria-hidden="true">✓</span> Never expire</li>
           </ul>
+          <div id="buy-credits" class="mt-6">
+            <p class="text-center text-sm text-gray-300 border border-gray-700 rounded-xl px-5 py-2.5">Buy inside the app — License window</p>
+          </div>
+          <p class="text-xs text-gray-400 mt-3">Pick your pack size at checkout.</p>
         </div>
 
       </div>
-      <p class="text-gray-500 text-sm mt-8">1 credit = 1 cloud-generated karaoke track. No subscription required — buy anytime in the app's License window.</p>
+      <p class="text-gray-400 text-sm mt-8">1 credit = 1 cloud-generated karaoke track. No subscription — you can also buy from the app's License window.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 px-6 bg-gray-900/50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-14">Frequently asked questions</h2>
+      <div class="space-y-3">
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">Which languages does it work with?</summary>
+          <p class="text-gray-400 text-sm mt-3">The transcription model handles around 100 languages, English and Polish included. Accuracy is best on clear vocals; for anything tricky the built-in editor lets you fix lines by hand.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">Do I need a powerful PC or a graphics card?</summary>
+          <p class="text-gray-400 text-sm mt-3">Any Windows 10/11 machine will run it. A faster CPU mainly means shorter processing times — and if your PC is slow, cloud mode does the heavy lifting instead.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">Do I need an internet connection?</summary>
+          <p class="text-gray-400 text-sm mt-3">Only to fetch the lyrics, and to pull the audio when you start from a link instead of your own file. The transcription and vocal separation run locally on your machine unless you deliberately switch to cloud mode.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">What can open a KFN file?</summary>
+          <p class="text-gray-400 text-sm mt-3">KFN is the format used by KaraFun-compatible players. Karafy also exports MP3+G (CD+G) for karaoke hardware, MP4 for any video player, and LRC for apps that show synced lyrics.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">What's the difference between local and cloud?</summary>
+          <p class="text-gray-400 text-sm mt-3">Local is free and private but bound by your hardware. Cloud is faster, uses larger models and adds AI lyrics correction — it costs credits, and audio is sent to the server for processing only in that mode.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">What can I use as the source track?</summary>
+          <p class="text-gray-400 text-sm mt-3">Any audio or video file on your disk — MP3, WAV, FLAC, M4A, OGG, MP4, MKV — or a link you paste, YouTube included. Whichever you choose, holding the rights to that music is your responsibility; see below.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">Can I use the results commercially?</summary>
+          <p class="text-gray-400 text-sm mt-3">Karafy is a tool — you are responsible for holding the rights to the music you process. For personal and private use it's generally fine; public performance or commercial use needs clearance from the rights holders in your country.</p>
+        </details>
+
+        <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
+          <summary class="font-semibold cursor-pointer">Is there a refund?</summary>
+          <p class="text-gray-400 text-sm mt-3">Yes — the free tier lets you make 10 songs before paying anything, and if Pro doesn't work for you, email <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300 underline">krzysztof@mrdev.pl</a> within 14 days and you'll get your money back.</p>
+        </details>
+
+      </div>
     </div>
   </section>
 
   <!-- Changelog -->
-  <section class="py-20 px-6 bg-gray-900/50">
+  <section class="py-20 px-6 bg-gray-950">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-14">Changelog</h2>
       <div id="changelog" class="space-y-4">
-        <p class="text-gray-500 text-center">Loading releases…</p>
+        <p class="text-gray-400 text-center">Loading releases…</p>
       </div>
     </div>
   </section>
@@ -255,31 +459,83 @@
     <div class="max-w-xl mx-auto">
       <h2 class="text-4xl font-extrabold mb-4">Ready to make karaoke?</h2>
       <p class="text-gray-400 mb-8">Free download. No account required.</p>
-      <a id="cta-download" href="#" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a id="cta-download" href="https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
         </svg>
         Download Karafy for Windows
       </a>
-      <p id="cta-version" class="text-sm text-gray-600 mt-3"></p>
+      <p id="cta-version" class="text-sm text-gray-500 mt-3">Windows 10/11 · 85 MB</p>
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer class="border-t border-gray-800 py-8 px-6 text-center text-sm text-gray-500">
-    <p>Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
-    <p class="mt-2"><a href="/privacy.html" class="hover:text-white transition">Privacy Policy</a></p>
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
+    <p class="mb-2">
+      <a href="/privacy.html" class="hover:text-white transition">Privacy Policy</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="mailto:krzysztof@mrdev.pl" class="hover:text-white transition">krzysztof@mrdev.pl</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/" hreflang="pl" class="hover:text-white transition">Polski</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Payments handled by Polar</p>
   </footer>
 
   <script>
     const RELEASES_API = 'https://api.github.com/repos/mrdevpl/karafy-releases/releases';
     const SETUP_URL = 'https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe';
+    const DOWNLOAD_IDS = ['nav-download', 'hero-download', 'cta-download', 'free-download'];
+
+    // Polar checkout links — PRODUCTION ORGANISATION ONLY.
+    // Polar's sandbox is a separate organisation with its own products and its own link
+    // ids, so a sandbox URL pasted here looks fine and takes no real payment.
+    // Leave empty until the store is approved and actually accepting charges.
+    // Empty = the pricing cards keep the "buy inside the app" note instead of a dead button.
+    const CHECKOUT = { pro: '', credits: '' };
+
+    // sendBeacon so a click that navigates away can't be lost in the batch queue.
+    function track(event, props) {
+      try {
+        window.posthog?.capture?.(event, { lang: document.documentElement.lang, ...props }, { transport: 'sendBeacon' });
+      } catch {}
+    }
+
+    function trackDownloadClicks() {
+      DOWNLOAD_IDS.forEach(id => {
+        const el = document.getElementById(id);
+        el?.addEventListener('click', () => track('download_click', { location: id.replace('-download', '') }));
+      });
+    }
+
+    function renderBuyButton(boxId, url, label, colour) {
+      if (!url) return;
+      const box = document.getElementById(boxId);
+      if (!box) return;
+      const a = document.createElement('a');
+      a.href = url;
+      a.className = `block text-center ${colour} text-white font-semibold px-5 py-2.5 rounded-xl transition`;
+      a.textContent = label;
+      a.addEventListener('click', () => track('checkout_click', { product: boxId.replace('buy-', '') }));
+      box.replaceChildren(a);
+    }
+
+    trackDownloadClicks();
+
+    renderBuyButton('buy-pro', CHECKOUT.pro, 'Buy Pro — $19.99', 'bg-purple-600 hover:bg-purple-500');
+    renderBuyButton('buy-credits', CHECKOUT.credits, 'Buy credits', 'bg-indigo-600 hover:bg-indigo-500');
 
     function setDownloadLinks(url) {
-      ['nav-download', 'hero-download', 'cta-download'].forEach(id => {
+      DOWNLOAD_IDS.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.href = url;
       });
+    }
+
+    function formatSize(bytes) {
+      return bytes ? `${Math.round(bytes / 1048576)} MB` : '85 MB';
     }
 
     async function loadReleases() {
@@ -287,18 +543,16 @@
         const res = await fetch(`${RELEASES_API}?per_page=3`);
         if (!res.ok) throw new Error('API error');
         const releases = await res.json();
-
         if (releases.length === 0) return;
 
         const latest = releases[0];
         const version = latest.tag_name;
-        const downloadUrl = latest.assets?.find(a => a.name === 'Karafy-win-Setup.exe')?.browser_download_url ?? SETUP_URL;
+        const asset = latest.assets?.find(a => a.name === 'Karafy-win-Setup.exe');
+        const size = formatSize(asset?.size);
 
-        document.getElementById('hero-version').textContent = `Latest: ${version}`;
-        document.getElementById('cta-version').textContent = `${version} · Windows 10/11 · ~120 MB`;
-        document.getElementById('hero-download').innerHTML = document.getElementById('hero-download').innerHTML.replace('Download for Windows', `Download ${version} for Windows`);
-        document.getElementById('cta-download').innerHTML = document.getElementById('cta-download').innerHTML.replace('Download Karafy for Windows', `Download Karafy ${version} for Windows`);
-        setDownloadLinks(downloadUrl);
+        setDownloadLinks(asset?.browser_download_url ?? SETUP_URL);
+        document.getElementById('hero-meta').textContent = `Windows 10/11 · ${version} · ${size} · no account · 10 songs free`;
+        document.getElementById('cta-version').textContent = `${version} · Windows 10/11 · ${size}`;
 
         const changelog = document.getElementById('changelog');
         changelog.innerHTML = releases.map(r => {
@@ -315,15 +569,14 @@
             <div class="bg-gray-900 border border-gray-800 rounded-xl p-5">
               <div class="flex items-center justify-between mb-3">
                 <span class="font-semibold text-purple-300">${escapeHtml(r.tag_name)}</span>
-                <span class="text-xs text-gray-500">${date}</span>
+                <span class="text-xs text-gray-400">${date}</span>
               </div>
-              ${notes ? `<ul class="space-y-1 list-disc list-inside">${notes}</ul>` : '<p class="text-gray-500 text-sm">No release notes.</p>'}
+              ${notes ? `<ul class="space-y-1 list-disc list-inside">${notes}</ul>` : '<p class="text-gray-400 text-sm">No release notes.</p>'}
             </div>`;
         }).join('');
       } catch {
-        setDownloadLinks(SETUP_URL);
-        document.getElementById('hero-version').textContent = 'Download for Windows';
-        document.getElementById('changelog').innerHTML = '<p class="text-gray-500 text-center">Could not load releases.</p>';
+        document.getElementById('changelog').innerHTML =
+          '<p class="text-gray-400 text-center">Release list unavailable — see <a href="https://github.com/mrdevpl/karafy-releases/releases" class="text-purple-400 underline">GitHub Releases</a>.</p>';
       }
     }
 

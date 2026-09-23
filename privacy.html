@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karafy — Privacy Policy</title>
   <meta name="description" content="How Karafy collects, uses, and protects your data." />
+
+  <link rel="canonical" href="https://karafy.app/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://karafy.app/privacy.html" />
+  <link rel="alternate" hreflang="pl" href="https://karafy.app/pl/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://karafy.app/privacy.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -34,7 +41,7 @@
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
       <section>
-        <p>Karafy ("we", "us") turns YouTube links into karaoke files. This page explains what
+        <p>Karafy ("we", "us") turns songs into karaoke files. This page explains what
         data the desktop app and its server collect, why, and what rights you have over it.
         Most of what Karafy does happens entirely on your own computer and never reaches us at
         all — the sections below spell out exactly which parts do.</p>
@@ -50,15 +57,15 @@
         <h2 class="text-2xl font-bold text-white mb-3">2. What we collect, and why</h2>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Local mode (default)</h3>
-        <p>Karafy downloads the YouTube audio, transcribes it, and separates vocals entirely on
+        <p>Karafy reads the audio, transcribes it, and separates vocals entirely on
         your own machine. Your audio, generated files, and job history never leave your
         computer — nothing is uploaded anywhere in local mode.</p>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">License activation</h3>
         <p>Activating a Pro license or credit pack sends your license key and your Windows
-        computer name to Lemon Squeezy (our payment provider) to verify the license, and your
+        computer name to Polar (our payment provider) to verify the license, and your
         license key and an instance identifier (no computer name) to our server to issue a short-lived access token.
-        We never see or store your name, email, or payment details — Lemon Squeezy handles
+        We never see or store your name, email, or payment details — Polar handles
         checkout, billing, and invoicing as the Merchant of Record.</p>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Cloud processing (opt-in)</h3>
@@ -89,6 +96,14 @@
         what they use it for. It's tied to the <strong>same toggle</strong> as diagnostic error
         reports in the About window — turning that off stops both.</p>
 
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Website analytics</h3>
+        <p>This website sends page views and download-button clicks to the same PostHog (EU)
+        project. It runs <strong>without cookies</strong> and without browser storage — nothing is
+        kept on your device between page loads, and we cannot recognise you on a return visit.
+        We don't collect your IP address for profiling, we don't record your screen, and there
+        are no advertising or cross-site trackers. That is also why this site shows no cookie
+        banner: there is nothing to consent to.</p>
+
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Automatic updates</h3>
         <p>Karafy checks GitHub for new releases and downloads updates automatically. This is a
         plain version check — no personal data is sent beyond what GitHub itself logs as
@@ -98,12 +113,12 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">3. Who we share data with</h2>
         <ul class="list-disc pl-6 space-y-1">
-          <li><strong>Lemon Squeezy</strong> — payment processing and license validation (Merchant of Record)</li>
+          <li><strong>Polar</strong> — payment processing and license validation (Merchant of Record)</li>
           <li><strong>OpenAI</strong> — cloud transcription and lyrics correction, only for jobs you choose to run in the cloud</li>
           <li><strong>RunPod</strong> — cloud vocal separation, only for jobs you choose to run in the cloud</li>
           <li><strong>GitHub</strong> — hosts app updates and this website</li>
           <li><strong>Seq</strong> — internal log viewer used by us to operate the service; not user-facing, receives operational logs (not raw audio or lyrics)</li>
-          <li><strong>PostHog (EU)</strong> — basic usage analytics (app launched, job created, license activated), tagged with a random device identifier, not your name or email</li>
+          <li><strong>PostHog (EU)</strong> — basic usage analytics: in the app (app launched, job created, license activated), tagged with a random device identifier; on this website (page views, download clicks), cookieless and with no stored identifier. Never your name or email</li>
         </ul>
         <p class="mt-3">We don't sell your data, and we don't use any advertising trackers on
         this site or in the app.</p>
