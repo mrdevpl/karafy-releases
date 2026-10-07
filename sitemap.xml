@@ -38,4 +38,40 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://karafy.app/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/terms.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/terms.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/refunds.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/refunds.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/refunds.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/refunds.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/refunds.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/refunds.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/refunds.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/refunds.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

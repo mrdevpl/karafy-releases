@@ -199,7 +199,7 @@
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3" aria-hidden="true">📥</div>
           <h3 class="font-semibold text-lg mb-2">Elastyczne źródła</h3>
-          <p class="text-gray-400 text-sm">Zacznij od pliku audio lub wideo, który już masz — MP3, WAV, FLAC, M4A, MP4 — albo wklej link, także z YouTube. Za prawa do przetwarzanej muzyki odpowiadasz Ty.</p>
+          <p class="text-gray-400 text-sm">Zacznij od pliku audio lub wideo, który już masz — MP3, WAV, FLAC, M4A, MP4 — albo wklej link. Za prawa do przetwarzanej muzyki odpowiadasz Ty.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
@@ -392,7 +392,7 @@
 
       </div>
       <p class="text-gray-400 text-sm mt-8">1 kredyt = 1 utwór karaoke wygenerowany w chmurze. Bez subskrypcji — możesz też kupić w oknie licencji w aplikacji.</p>
-      <p class="text-gray-500 text-xs mt-3">Ceny podane w dolarach. Podatek VAT jest doliczany przy płatności zgodnie z krajem zakupu — sprzedaż obsługuje Polar.</p>
+      <p class="text-gray-500 text-xs mt-3">Ceny podane w dolarach. Podatek VAT jest doliczany przy płatności zgodnie z krajem zakupu — płatności obsługuje Stripe.</p>
     </div>
   </section>
 
@@ -429,7 +429,7 @@
 
         <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
           <summary class="font-semibold cursor-pointer">Czego mogę użyć jako źródła utworu?</summary>
-          <p class="text-gray-400 text-sm mt-3">Dowolnego pliku audio lub wideo z dysku — MP3, WAV, FLAC, M4A, OGG, MP4, MKV — albo wklejonego linku, także z YouTube. Niezależnie od wyboru, za prawa do tej muzyki odpowiadasz Ty; patrz niżej.</p>
+          <p class="text-gray-400 text-sm mt-3">Dowolnego pliku audio lub wideo z dysku — MP3, WAV, FLAC, M4A, OGG, MP4, MKV — albo wklejonego linku. Niezależnie od wyboru, za prawa do tej muzyki odpowiadasz Ty; patrz niżej.</p>
         </details>
 
         <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -439,7 +439,7 @@
 
         <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
           <summary class="font-semibold cursor-pointer">Czy mogę dostać zwrot pieniędzy?</summary>
-          <p class="text-gray-400 text-sm mt-3">Tak. Darmowa wersja pozwala zrobić 10 utworów, zanim cokolwiek zapłacisz, a jeśli Pro Ci nie podejdzie — napisz na <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300 underline">krzysztof@mrdev.pl</a> w ciągu 14 dni, a otrzymasz zwrot.</p>
+          <p class="text-gray-400 text-sm mt-3">Tak. Darmowa wersja pozwala zrobić 10 utworów, zanim cokolwiek zapłacisz. Pro: pełny zwrot w ciągu 14 dni, bez podawania przyczyny. Pakiety kredytów: pełny zwrot w ciągu 14 dni, jeśli nie wykorzystano żadnego kredytu z pakietu. Szczegóły w <a href="/pl/refunds.html" class="text-purple-400 hover:text-purple-300 underline">Polityce zwrotów</a>.</p>
         </details>
 
       </div>
@@ -477,13 +477,20 @@
   <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
     <p class="mb-2">Karafy · Windows 10/11 · Stworzone z ❤️ i Whisper AI</p>
     <p class="mb-2">
-      <a href="/pl/privacy.html" class="hover:text-white transition">Polityka prywatności</a>
+      <a href="/pl/terms.html" class="hover:text-white transition">Regulamin</a>
       <span class="text-gray-600 mx-2">·</span>
-      <a href="mailto:krzysztof@mrdev.pl" class="hover:text-white transition">krzysztof@mrdev.pl</a>
+      <a href="/pl/refunds.html" class="hover:text-white transition">Zwroty</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/privacy.html" class="hover:text-white transition">Prywatność</a>
       <span class="text-gray-600 mx-2">·</span>
       <a href="/" hreflang="en" class="hover:text-white transition">English</a>
     </p>
-    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Płatności obsługuje Polar</p>
+    <p class="mb-2">
+      Pomoc: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Naruszenia praw autorskich: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Płatności obsługuje Stripe</p>
   </footer>
 
   <script>
@@ -491,9 +498,8 @@
     const SETUP_URL = 'https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe';
     const DOWNLOAD_IDS = ['nav-download', 'hero-download', 'cta-download', 'free-download'];
 
-    // Linki checkout Polar — WYŁĄCZNIE Z ORGANIZACJI PRODUKCYJNEJ.
-    // Sandbox Polara to osobna organizacja z własnymi produktami i własnymi id linków,
-    // więc adres z sandboxa wklejony tutaj wygląda poprawnie i nie przyjmuje płatności.
+    // Linki płatności Stripe — WYŁĄCZNIE TRYB LIVE.
+    // Link z trybu testowego wygląda tak samo, ale nie przyjmuje prawdziwej płatności.
     // Zostaw puste, dopóki sklep nie zostanie zatwierdzony i nie zacznie przyjmować wpłat.
     // Puste = w cenniku zostaje notka „zakup w aplikacji" zamiast martwego przycisku.
     const CHECKOUT = { pro: '', credits: '' };

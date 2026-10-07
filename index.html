@@ -198,7 +198,7 @@
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
           <div class="text-3xl mb-3" aria-hidden="true">📥</div>
           <h3 class="font-semibold text-lg mb-2">Flexible input</h3>
-          <p class="text-gray-400 text-sm">Start from an audio or video file you already own — MP3, WAV, FLAC, M4A, MP4 — or paste a link, YouTube included. You are responsible for holding the rights to the music you process.</p>
+          <p class="text-gray-400 text-sm">Start from an audio or video file you already own — MP3, WAV, FLAC, M4A, MP4 — or paste a link. You are responsible for holding the rights to the music you process.</p>
         </div>
 
         <div class="card-glow bg-gray-900 border border-gray-800 rounded-2xl p-6 transition">
@@ -427,7 +427,7 @@
 
         <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
           <summary class="font-semibold cursor-pointer">What can I use as the source track?</summary>
-          <p class="text-gray-400 text-sm mt-3">Any audio or video file on your disk — MP3, WAV, FLAC, M4A, OGG, MP4, MKV — or a link you paste, YouTube included. Whichever you choose, holding the rights to that music is your responsibility; see below.</p>
+          <p class="text-gray-400 text-sm mt-3">Any audio or video file on your disk — MP3, WAV, FLAC, M4A, OGG, MP4, MKV — or a link you paste. Whichever you choose, holding the rights to that music is your responsibility; see below.</p>
         </details>
 
         <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -437,7 +437,7 @@
 
         <details class="bg-gray-900 border border-gray-800 rounded-xl p-5">
           <summary class="font-semibold cursor-pointer">Is there a refund?</summary>
-          <p class="text-gray-400 text-sm mt-3">Yes — the free tier lets you make 10 songs before paying anything, and if Pro doesn't work for you, email <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300 underline">krzysztof@mrdev.pl</a> within 14 days and you'll get your money back.</p>
+          <p class="text-gray-400 text-sm mt-3">Yes. The free tier lets you make 10 songs before paying anything. Pro: a full refund within 14 days, no reason needed. Credit packs: a full refund within 14 days if you haven't used any credit from the pack. See the <a href="/refunds.html" class="text-purple-400 hover:text-purple-300 underline">Refund Policy</a>.</p>
         </details>
 
       </div>
@@ -475,13 +475,20 @@
   <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
     <p class="mb-2">Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
     <p class="mb-2">
-      <a href="/privacy.html" class="hover:text-white transition">Privacy Policy</a>
+      <a href="/terms.html" class="hover:text-white transition">Terms</a>
       <span class="text-gray-600 mx-2">·</span>
-      <a href="mailto:krzysztof@mrdev.pl" class="hover:text-white transition">krzysztof@mrdev.pl</a>
+      <a href="/refunds.html" class="hover:text-white transition">Refunds</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/privacy.html" class="hover:text-white transition">Privacy</a>
       <span class="text-gray-600 mx-2">·</span>
       <a href="/pl/" hreflang="pl" class="hover:text-white transition">Polski</a>
     </p>
-    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Payments handled by Polar</p>
+    <p class="mb-2">
+      Support: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Copyright notices: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Payments processed by Stripe</p>
   </footer>
 
   <script>
@@ -489,9 +496,8 @@
     const SETUP_URL = 'https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe';
     const DOWNLOAD_IDS = ['nav-download', 'hero-download', 'cta-download', 'free-download'];
 
-    // Polar checkout links — PRODUCTION ORGANISATION ONLY.
-    // Polar's sandbox is a separate organisation with its own products and its own link
-    // ids, so a sandbox URL pasted here looks fine and takes no real payment.
+    // Stripe Payment Links — LIVE MODE ONLY.
+    // A test-mode link looks the same but takes no real payment.
     // Leave empty until the store is approved and actually accepting charges.
     // Empty = the pricing cards keep the "buy inside the app" note instead of a dead button.
     const CHECKOUT = { pro: '', credits: '' };

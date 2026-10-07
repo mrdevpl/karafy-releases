@@ -36,7 +36,7 @@
 
   <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
     <h1 class="text-4xl font-extrabold mb-2">Privacy <span class="gradient-text">Policy</span></h1>
-    <p class="text-gray-500 mb-12">Last updated: August 10, 2026</p>
+    <p class="text-gray-500 mb-12">Last updated: October 7, 2026</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
@@ -50,7 +50,7 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">1. Who we are</h2>
         <p>The data controller is <strong>GemuStudio Krzysztof Owsiany</strong>. For any privacy
-        question or request, contact <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300">krzysztof@mrdev.pl</a>.</p>
+        question or request, contact <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300">support@karafy.app</a>.</p>
       </section>
 
       <section>
@@ -61,12 +61,15 @@
         your own machine. Your audio, generated files, and job history never leave your
         computer — nothing is uploaded anywhere in local mode.</p>
 
-        <h3 class="text-lg font-semibold text-white mt-6 mb-2">License activation</h3>
-        <p>Activating a Pro license or credit pack sends your license key and your Windows
-        computer name to Polar (our payment provider) to verify the license, and your
-        license key and an instance identifier (no computer name) to our server to issue a short-lived access token.
-        We never see or store your name, email, or payment details — Polar handles
-        checkout, billing, and invoicing as the Merchant of Record.</p>
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Purchases and licences</h3>
+        <p>When you buy Pro or a credit pack, Stripe processes the payment and receives your card
+        details — we never see your full card number. Stripe sends us your email address, your
+        country and the order details. Our server then creates your licence key, stores it with
+        your email address, and emails it to you through Resend.</p>
+        <p class="mt-3">Activating a licence sends your licence key and your computer's name to our
+        server. We store the activation date, the device name, and when the app last checked the
+        licence. We use this to enforce the three-device limit and as proof of delivery if a
+        payment is disputed. We do not store your IP address.</p>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Cloud processing (opt-in)</h3>
         <p>If you choose cloud-accelerated processing (spending cloud credits), your audio file
@@ -113,7 +116,8 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">3. Who we share data with</h2>
         <ul class="list-disc pl-6 space-y-1">
-          <li><strong>Polar</strong> — payment processing and license validation (Merchant of Record)</li>
+          <li><strong>Stripe</strong> — payment processing; receives your payment details and email address when you buy</li>
+          <li><strong>Resend</strong> — sends the email with your licence key</li>
           <li><strong>OpenAI</strong> — cloud transcription and lyrics correction, only for jobs you choose to run in the cloud</li>
           <li><strong>RunPod</strong> — cloud vocal separation, only for jobs you choose to run in the cloud</li>
           <li><strong>GitHub</strong> — hosts app updates and this website</li>
@@ -130,7 +134,7 @@
         credits. We process diagnostic error reports, usage analytics, and cloud processing data
         based on our legitimate interest in keeping Karafy working reliably and understanding how
         it's used — you can object to diagnostic reporting and usage analytics at any time by
-        turning off the shared toggle in the About window.</p>
+        turning off the shared toggle in the About window. We keep licence activation records based on our legitimate interest in defending against disputed payments.</p>
       </section>
 
       <section>
@@ -142,15 +146,16 @@
           <li>Cloud transcription results (text): 30 days, then automatically deleted</li>
           <li>Diagnostic error reports: 90 days, then automatically deleted</li>
           <li>Usage analytics events: kept in PostHog under their standard retention policy</li>
-          <li>Credit balance and license key: kept for the life of your license, to track your entitlements</li>
+          <li>Licence key, purchase email, device activations and credit balance: kept for the life of your licence</li>
+          <li>Purchase records: kept as long as Polish tax law requires (5 years from the end of the tax year)</li>
         </ul>
       </section>
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">6. International transfers</h2>
-        <p>If you use cloud processing, your audio is processed by OpenAI and RunPod, which may
-        process data outside the European Economic Area. Both providers offer standard
-        contractual safeguards for international transfers.</p>
+        <p>Stripe and Resend may process data outside the European Economic Area, as may OpenAI
+        and RunPod when you use cloud processing. All of them offer standard contractual
+        safeguards for international transfers.</p>
       </section>
 
       <section>
@@ -159,7 +164,7 @@
         data we hold about you, and to object to processing based on our legitimate interest.
         Since most Karafy data lives only on your own computer, most of these rights are already
         entirely in your hands — for anything held on our server (license/credits, cloud job
-        history, diagnostic reports), email <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300">krzysztof@mrdev.pl</a>
+        history, diagnostic reports), email <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300">support@karafy.app</a>
         and we'll act on your request.</p>
       </section>
 
@@ -172,8 +177,23 @@
     </div>
   </main>
 
-  <footer class="border-t border-gray-800 py-8 px-6 text-center text-sm text-gray-500">
-    <p>Karafy · <a href="/" class="hover:text-white transition">Back to home</a></p>
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
+    <p class="mb-2">
+      <a href="/terms.html" class="hover:text-white transition">Terms</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/refunds.html" class="hover:text-white transition">Refunds</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/privacy.html" class="hover:text-white transition">Privacy</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/privacy.html" hreflang="pl" class="hover:text-white transition">Polski</a>
+    </p>
+    <p class="mb-2">
+      Support: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Copyright notices: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Payments processed by Stripe</p>
   </footer>
 </body>
 </html>

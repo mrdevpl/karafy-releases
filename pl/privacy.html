@@ -36,7 +36,7 @@
 
   <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
     <h1 class="text-4xl font-extrabold mb-2">Polityka <span class="gradient-text">prywatności</span></h1>
-    <p class="text-gray-500 mb-12">Ostatnia aktualizacja: 10 sierpnia 2026</p>
+    <p class="text-gray-500 mb-12">Ostatnia aktualizacja: 7 października 2026</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
@@ -50,7 +50,7 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">1. Kto administruje danymi</h2>
         <p>Administratorem danych jest <strong>GemuStudio Krzysztof Owsiany</strong>. W sprawach
-        dotyczących prywatności napisz na <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300">krzysztof@mrdev.pl</a>.</p>
+        dotyczących prywatności napisz na <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300">support@karafy.app</a>.</p>
       </section>
 
       <section>
@@ -61,13 +61,15 @@
         komputerze. Twoje audio, wygenerowane pliki i historia zadań nigdy nie opuszczają
         komputera — w trybie lokalnym nic nie jest nigdzie wysyłane.</p>
 
-        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Aktywacja licencji</h3>
-        <p>Aktywacja licencji Pro lub pakietu kredytów wysyła Twój klucz licencyjny i nazwę
-        komputera z Windows do Polar (nasz dostawca płatności) w celu weryfikacji
-        licencji, oraz klucz licencyjny i identyfikator instancji (bez nazwy komputera) do
-        naszego serwera w celu wydania krótkoterminowego tokenu dostępu. Nigdy nie widzimy ani nie przechowujemy
-        Twojego imienia, e-maila ani danych płatności — Polar obsługuje zakup,
-        rozliczenia i faktury jako Merchant of Record.</p>
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Zakupy i licencje</h3>
+        <p>Gdy kupujesz Pro albo pakiet kredytów, płatność obsługuje Stripe i to on otrzymuje dane
+        Twojej karty — nigdy nie widzimy jej pełnego numeru. Stripe przekazuje nam Twój adres
+        e-mail, kraj i szczegóły zamówienia. Nasz serwer tworzy wtedy klucz licencyjny, zapisuje go
+        razem z Twoim adresem e-mail i wysyła Ci go mailem przez Resend.</p>
+        <p class="mt-3">Aktywacja licencji wysyła klucz licencyjny i nazwę komputera do naszego
+        serwera. Zapisujemy datę aktywacji, nazwę urządzenia i moment, w którym aplikacja ostatnio
+        sprawdziła licencję. Służy to pilnowaniu limitu trzech urządzeń oraz jako dowód dostarczenia
+        produktu, gdyby płatność została zakwestionowana. Nie zapisujemy Twojego adresu IP.</p>
 
         <h3 class="text-lg font-semibold text-white mt-6 mb-2">Przetwarzanie w chmurze (opcjonalne)</h3>
         <p>Jeśli wybierzesz przetwarzanie przyspieszone w chmurze (wykorzystujące kredyty
@@ -118,7 +120,8 @@
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">3. Komu udostępniamy dane</h2>
         <ul class="list-disc pl-6 space-y-1">
-          <li><strong>Polar</strong> — obsługa płatności i weryfikacja licencji (Merchant of Record)</li>
+          <li><strong>Stripe</strong> — obsługa płatności; otrzymuje dane płatnicze i adres e-mail przy zakupie</li>
+          <li><strong>Resend</strong> — wysyła maila z kluczem licencyjnym</li>
           <li><strong>OpenAI</strong> — transkrypcja i korekta tekstu w chmurze, tylko dla zadań uruchomionych w chmurze</li>
           <li><strong>RunPod</strong> — separacja wokalu w chmurze, tylko dla zadań uruchomionych w chmurze</li>
           <li><strong>GitHub</strong> — hostuje aktualizacje aplikacji i tę stronę</li>
@@ -136,7 +139,7 @@
         przetwarzamy na podstawie naszego prawnie uzasadnionego interesu w utrzymaniu niezawodnego
         działania Karafy i zrozumieniu jego wykorzystania — możesz w każdej chwili sprzeciwić się
         raportowaniu diagnostycznemu i analityce użytkowania, wyłączając wspólny przełącznik w
-        oknie „O aplikacji".</p>
+        oknie „O aplikacji". Dane o aktywacjach licencji przechowujemy na podstawie prawnie uzasadnionego interesu, jakim jest obrona przed kwestionowaniem płatności.</p>
       </section>
 
       <section>
@@ -148,16 +151,16 @@
           <li>Wyniki transkrypcji w chmurze (tekst): 30 dni, potem automatyczne usunięcie</li>
           <li>Raporty diagnostyczne błędów: 90 dni, potem automatyczne usunięcie</li>
           <li>Zdarzenia analityki użytkowania: przechowywane w PostHog zgodnie z ich standardową polityką retencji</li>
-          <li>Saldo kredytów i klucz licencyjny: przez cały okres ważności licencji, w celu śledzenia uprawnień</li>
+          <li>Klucz licencyjny, adres e-mail z zakupu, aktywacje urządzeń i saldo kredytów: przez cały okres ważności licencji</li>
+          <li>Dokumentacja zakupów: tak długo, jak wymaga polskie prawo podatkowe (5 lat od końca roku podatkowego)</li>
         </ul>
       </section>
 
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">6. Przekazywanie danych międzynarodowo</h2>
-        <p>Jeśli korzystasz z przetwarzania w chmurze, Twoje audio jest przetwarzane przez
-        OpenAI i RunPod, które mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym.
-        Oba podmioty stosują standardowe klauzule umowne zabezpieczające transfery
-        międzynarodowe.</p>
+        <p>Stripe i Resend mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym, podobnie
+        jak OpenAI i RunPod przy przetwarzaniu w chmurze. Wszystkie te podmioty stosują standardowe
+        klauzule umowne zabezpieczające transfery międzynarodowe.</p>
       </section>
 
       <section>
@@ -168,7 +171,7 @@
         wyłącznie na Twoim komputerze, większość tych praw masz już w pełni w swoich rękach —
         w sprawie danych przechowywanych na naszym serwerze (licencja/kredyty, historia zadań w
         chmurze, raporty diagnostyczne) napisz na
-        <a href="mailto:krzysztof@mrdev.pl" class="text-purple-400 hover:text-purple-300">krzysztof@mrdev.pl</a>,
+        <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300">support@karafy.app</a>,
         a zrealizujemy Twoje żądanie.</p>
       </section>
 
@@ -181,8 +184,23 @@
     </div>
   </main>
 
-  <footer class="border-t border-gray-800 py-8 px-6 text-center text-sm text-gray-500">
-    <p>Karafy · <a href="/pl/" class="hover:text-white transition">Powrót do strony głównej</a></p>
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Stworzone z ❤️ i Whisper AI</p>
+    <p class="mb-2">
+      <a href="/pl/terms.html" class="hover:text-white transition">Regulamin</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/refunds.html" class="hover:text-white transition">Zwroty</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/privacy.html" class="hover:text-white transition">Prywatność</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/privacy.html" hreflang="en" class="hover:text-white transition">English</a>
+    </p>
+    <p class="mb-2">
+      Pomoc: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Naruszenia praw autorskich: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Płatności obsługuje Stripe</p>
   </footer>
 </body>
 </html>
