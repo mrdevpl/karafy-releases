@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karafy — Cloud Credits</title>
+  <meta name="description" content="Buy cloud processing credits for Karafy." />
+
+  <link rel="canonical" href="https://karafy.app/credits.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <a href="/pl/" class="text-sm text-gray-400 hover:text-white transition">PL</a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
+    <h1 class="text-4xl font-extrabold mb-2 text-center">Cloud <span class="gradient-text">credits</span></h1>
+    <p class="text-gray-400 mb-12 text-center">One credit turns one song into karaoke on our cloud servers. Credits never expire. No Pro needed.</p>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+        <p class="text-3xl font-extrabold">50</p><p class="text-gray-400 mb-4">credits</p>
+        <p class="text-2xl font-bold mb-6">$19.99</p>
+        <div data-pack="50"><p class="text-sm text-gray-500">Coming soon</p></div>
+      </div>
+      <div class="bg-gray-900 border border-purple-700 rounded-2xl p-6 text-center">
+        <p class="text-3xl font-extrabold">200</p><p class="text-gray-400 mb-4">credits</p>
+        <p class="text-2xl font-bold mb-6">$59.99</p>
+        <div data-pack="200"><p class="text-sm text-gray-500">Coming soon</p></div>
+      </div>
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+        <p class="text-3xl font-extrabold">500</p><p class="text-gray-400 mb-4">credits</p>
+        <p class="text-2xl font-bold mb-6">$129.99</p>
+        <div data-pack="500"><p class="text-sm text-gray-500">Coming soon</p></div>
+      </div>
+    </div>
+
+    <p class="text-gray-500 text-xs mt-8 text-center">Prices in US dollars. VAT is added at checkout according to your country.
+      Use the same email as for your other Karafy purchases so all your credits share one balance.
+      <a href="/refunds.html" class="text-purple-400 hover:text-purple-300 underline">Refund Policy</a></p>
+  </main>
+
+  <script>
+    // Stripe Payment Links — LIVE MODE ONLY.
+    // A test-mode link looks the same but takes no real payment.
+    // Empty = the pack keeps its "Coming soon" note instead of a dead button.
+    const PACK_LINKS = { 50: 'https://buy.stripe.com/test_8x2aEWfAYcte5XFaQy0co01', 200: 'https://buy.stripe.com/test_6oU8wOewU1OA5XFgaS0co02', 500: 'https://buy.stripe.com/test_3cI28q74sal6gCjcYG0co03' };
+    // The app opens this page with ?prefilled_email=..., passed on so the pack lands on the
+    // same email-keyed credit balance as the buyer's earlier purchases.
+    const email = new URLSearchParams(location.search).get('prefilled_email');
+
+    document.querySelectorAll('[data-pack]').forEach(box => {
+      const url = PACK_LINKS[box.dataset.pack];
+      if (!url) return;
+      const a = document.createElement('a');
+      a.href = email ? url + '?prefilled_email=' + encodeURIComponent(email) : url;
+      a.className = 'block bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-5 py-2.5 rounded-xl transition';
+      a.textContent = 'Buy ' + box.dataset.pack + ' credits';
+      box.replaceChildren(a);
+    });
+  </script>
+
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
+    <p class="mb-2">
+      <a href="/terms.html" class="hover:text-white transition">Terms</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/refunds.html" class="hover:text-white transition">Refunds</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/privacy.html" class="hover:text-white transition">Privacy</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/" hreflang="pl" class="hover:text-white transition">Polski</a>
+    </p>
+    <p class="mb-2">
+      Support: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Copyright notices: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Payments processed by Stripe</p>
+  </footer>
+</body>
+</html>

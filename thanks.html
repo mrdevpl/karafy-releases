@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karafy — Thank You</title>
+  <meta name="description" content="Your Karafy licence key." />
+
+  <link rel="canonical" href="https://karafy.app/thanks.html" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <a href="/pl/" class="text-sm text-gray-400 hover:text-white transition">PL</a>
+    </div>
+  </nav>
+
+  <main class="max-w-xl mx-auto px-6 pt-32 pb-24 text-center">
+    <h1 class="text-3xl font-extrabold mb-4">Thank you for buying <span class="gradient-text">Karafy</span></h1>
+    <p class="text-gray-300 mb-8">Your licence key is below. We have also emailed it to you.</p>
+    <div id="key-box" class="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
+      <p class="text-gray-400">Loading your key…</p>
+    </div>
+    <p class="text-gray-400 text-sm">
+      Open Karafy, click <strong>Licence</strong> in the top right, paste the key and click Activate.
+    </p>
+  </main>
+
+  <script>
+    const box = document.getElementById('key-box');
+    const sessionId = new URLSearchParams(location.search).get('session_id');
+    // The payment webhook can land a few seconds after Stripe redirects here, so a 404 is
+    // retried for about half a minute before falling back to "it's in your email".
+    const ATTEMPTS = 10, DELAY_MS = 3000;
+
+    function showKey(key) {
+      box.replaceChildren();
+      const p = document.createElement('p');
+      p.className = 'text-2xl font-mono text-white break-all';
+      p.textContent = key;
+      const copy = document.createElement('button');
+      copy.className = 'mt-4 bg-purple-600 hover:bg-purple-500 px-5 py-2 rounded-lg';
+      copy.textContent = 'Copy';
+      copy.addEventListener('click', () => { navigator.clipboard.writeText(key); copy.textContent = 'Copied'; });
+      box.append(p, copy);
+    }
+
+    function showFallback() {
+      box.innerHTML = '<p class="text-gray-300">Your key is on its way by email. ' +
+        'If it does not arrive within a few minutes, contact ' +
+        '<a class="text-purple-400 underline" href="mailto:support@karafy.app">support@karafy.app</a>.</p>';
+    }
+
+    async function load(attempt) {
+      try {
+        const r = await fetch('https://api.karafy.app/licenses/by-session?sessionId=' + encodeURIComponent(sessionId));
+        if (r.ok) return showKey((await r.json()).key);
+      } catch {}
+      if (attempt < ATTEMPTS) setTimeout(() => load(attempt + 1), DELAY_MS);
+      else showFallback();
+    }
+
+    if (!sessionId) showFallback(); else load(1);
+  </script>
+
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
+    <p class="mb-2">
+      <a href="/terms.html" class="hover:text-white transition">Terms</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/refunds.html" class="hover:text-white transition">Refunds</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/privacy.html" class="hover:text-white transition">Privacy</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/" hreflang="pl" class="hover:text-white transition">Polski</a>
+    </p>
+    <p class="mb-2">
+      Support: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Copyright notices: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Payments processed by Stripe</p>
+  </footer>
+</body>
+</html>
