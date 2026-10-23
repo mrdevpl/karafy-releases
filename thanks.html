@@ -50,7 +50,7 @@
     // retried for about half a minute before falling back to "it's in your email".
     const ATTEMPTS = 10, DELAY_MS = 3000;
 
-    function showKey(key) {
+    function showKey(key, tier) {
       box.replaceChildren();
       const p = document.createElement('p');
       p.className = 'text-2xl font-mono text-white break-all';
@@ -60,6 +60,12 @@
       copy.textContent = 'Copy';
       copy.addEventListener('click', () => { navigator.clipboard.writeText(key); copy.textContent = 'Copied'; });
       box.append(p, copy);
+      if (tier === 'Credits') {
+        const note = document.createElement('p');
+        note.className = 'mt-4 text-sm text-gray-400';
+        note.textContent = "Already have Karafy Pro? You don't need this key: the credits are already on your account.";
+        box.append(note);
+      }
     }
 
     function showFallback() {
@@ -71,7 +77,7 @@
     async function load(attempt) {
       try {
         const r = await fetch('https://api.karafy.app/licenses/by-session?sessionId=' + encodeURIComponent(sessionId));
-        if (r.ok) return showKey((await r.json()).key);
+        if (r.ok) { const d = await r.json(); return showKey(d.key, d.tier); }
       } catch {}
       if (attempt < ATTEMPTS) setTimeout(() => load(attempt + 1), DELAY_MS);
       else showFallback();
