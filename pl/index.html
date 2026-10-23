@@ -387,7 +387,7 @@
           <div id="buy-credits" class="mt-6">
             <p class="text-center text-sm text-gray-300 border border-gray-700 rounded-xl px-5 py-2.5">Zakup w aplikacji — okno Licencja</p>
           </div>
-          <p class="text-xs text-gray-400 mt-3">Rozmiar pakietu wybierzesz przy płatności.</p>
+          <p class="text-xs text-gray-400 mt-3">Rozmiar pakietu wybierzesz na następnej stronie.</p>
         </div>
 
       </div>
@@ -502,7 +502,7 @@
     // Link z trybu testowego wygląda tak samo, ale nie przyjmuje prawdziwej płatności.
     // Zostaw puste, dopóki sklep nie zostanie zatwierdzony i nie zacznie przyjmować wpłat.
     // Puste = w cenniku zostaje notka „zakup w aplikacji" zamiast martwego przycisku.
-    const CHECKOUT = { pro: '', credits: '' };
+    const CHECKOUT = { pro: 'https://buy.stripe.com/aFaeVcbkI0Kwcm30bU0co00', credits: '/credits.html' };
 
     // sendBeacon, żeby kliknięcie prowadzące do nawigacji nie zginęło w kolejce paczek.
     function track(event, props) {

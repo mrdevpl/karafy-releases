@@ -386,7 +386,7 @@
           <div id="buy-credits" class="mt-6">
             <p class="text-center text-sm text-gray-300 border border-gray-700 rounded-xl px-5 py-2.5">Buy inside the app — License window</p>
           </div>
-          <p class="text-xs text-gray-400 mt-3">Pick your pack size at checkout.</p>
+          <p class="text-xs text-gray-400 mt-3">Pick your pack size on the next page.</p>
         </div>
 
       </div>
@@ -500,7 +500,7 @@
     // A test-mode link looks the same but takes no real payment.
     // Leave empty until the store is approved and actually accepting charges.
     // Empty = the pricing cards keep the "buy inside the app" note instead of a dead button.
-    const CHECKOUT = { pro: '', credits: '' };
+    const CHECKOUT = { pro: 'https://buy.stripe.com/aFaeVcbkI0Kwcm30bU0co00', credits: '/credits.html' };
 
     // sendBeacon so a click that navigates away can't be lost in the batch queue.
     function track(event, props) {
