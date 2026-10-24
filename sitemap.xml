@@ -74,4 +74,46 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://karafy.app/how-to-make-karaoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/how-to-make-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/jak-zrobic-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/how-to-make-karaoke.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/jak-zrobic-karaoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/how-to-make-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/jak-zrobic-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/how-to-make-karaoke.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/mp3-to-kfn.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/mp3-to-kfn.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/mp3-do-kfn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/mp3-to-kfn.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/mp3-do-kfn.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/mp3-to-kfn.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/mp3-do-kfn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/mp3-to-kfn.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/credits.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
