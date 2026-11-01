@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows blokuje instalator Karafy: co zrobić</title>
+  <meta name="description" content="Co zrobić, gdy SmartScreen lub Smart App Control blokuje instalator Karafy w Windows, i jak sprawdzić pobrany plik." />
+
+  <link rel="canonical" href="https://karafy.app/pl/pomoc-instalacja.html" />
+  <link rel="alternate" hreflang="en" href="https://karafy.app/install-help.html" />
+  <link rel="alternate" hreflang="pl" href="https://karafy.app/pl/pomoc-instalacja.html" />
+  <link rel="alternate" hreflang="x-default" href="https://karafy.app/install-help.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/pl/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <a href="/install-help.html" class="text-sm text-gray-400 hover:text-white transition">EN</a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
+    <h1 class="text-4xl font-extrabold mb-4">Windows blokuje <span class="gradient-text">instalator Karafy</span></h1>
+    <p class="text-gray-400 mb-12">Karafy nie ma jeszcze podpisu cyfrowego, więc Windows nie rozpoznaje wydawcy. Co zrobić dalej, zależy od komunikatu, który widzisz.</p>
+
+    <div class="space-y-10 text-gray-300 leading-relaxed">
+
+      <section class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+        <h2 class="text-xl font-bold text-white mb-2">Jeszcze nie kupiłeś Karafy?</h2>
+        <p>Najpierw zainstaluj wersję darmową. Pierwsze 10 utworów jest za darmo, więc sprawdzisz, czy program instaluje się na Twoim komputerze, zanim za cokolwiek zapłacisz.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Komunikat 1: „System Windows ochronił Twój komputer"</h2>
+        <p>To Microsoft Defender SmartScreen, niebieskie okno. Najczęstszy przypadek, wystarczą dwa kliknięcia:</p>
+        <ol class="list-decimal pl-6 space-y-1 mt-3">
+          <li>Kliknij <strong>Więcej informacji</strong>.</li>
+          <li>Kliknij <strong>Uruchom mimo to</strong>.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Komunikat 2: Smart App Control zablokowało aplikację</h2>
+        <p>Smart App Control (po polsku także „Inteligentne sterowanie aplikacjami”) to funkcja zabezpieczeń Windows 11, często włączona domyślnie na nowych laptopach. Blokuje aplikacje od wydawców, których nie może zweryfikować, i <strong>nie ma przycisku „Uruchom mimo to”</strong>. Niepodpisany instalator uruchomi się tylko po wyłączeniu tej funkcji.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Przeczytaj, zanim ją wyłączysz</h3>
+        <p>Ta funkcja chroni cały komputer, nie tylko ten instalator. W wielu wersjach Windows <strong>nie da się jej włączyć ponownie</strong> bez zresetowania lub ponownej instalacji systemu. To Twoja decyzja, a pozostawienie jej włączonej jest całkowicie rozsądnym wyborem.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Jeśli zdecydujesz się ją wyłączyć</h3>
+        <ol class="list-decimal pl-6 space-y-1">
+          <li>Otwórz <strong>Zabezpieczenia Windows</strong>.</li>
+          <li>Wejdź w <strong>Kontrola aplikacji i przeglądarki</strong>.</li>
+          <li>Otwórz ustawienia <strong>Smart App Control</strong>.</li>
+          <li>Wybierz <strong>Wyłączone</strong>.</li>
+          <li>Uruchom ponownie <code>Karafy-win-Setup.exe</code>.</li>
+        </ol>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Jeśli wolisz zostawić ją włączoną</h3>
+        <p>Wtedy Karafy nie da się zainstalować na tym komputerze, dopóki instalator nie będzie podpisany. Jeśli już zapłaciłeś, napisz na <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300 underline">support@karafy.app</a> w ciągu 14 dni od zakupu, a oddamy pieniądze, zgodnie z <a href="/pl/refunds.html" class="text-purple-400 hover:text-purple-300 underline">Polityką zwrotów</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Jak sprawdzić pobrany plik</h2>
+        <p>Każda wersja jest publikowana jawnie na <a href="https://github.com/mrdevpl/karafy-releases/releases/latest" class="text-purple-400 hover:text-purple-300 underline">GitHub Releases</a>, z sumą kontrolną SHA-256 przy każdym pliku. Żeby porównać ją ze swoim plikiem, otwórz PowerShell w folderze Pobrane i uruchom:</p>
+        <pre class="bg-gray-900 border border-gray-800 rounded-xl p-4 mt-3 text-sm overflow-x-auto"><code>Get-FileHash .\Karafy-win-Setup.exe -Algorithm SHA256</code></pre>
+        <p class="mt-3">Jeśli obie wartości są takie same, masz dokładnie ten plik, który opublikowaliśmy.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Częste pytania</h2>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Dlaczego Karafy nie jest podpisane?</h3>
+        <p>Podpisywanie kodu jest w planach i usunie te komunikaty. Nie mamy jeszcze terminu.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Jakie wersje Windows są obsługiwane?</h3>
+        <p>64-bitowy Windows 10 i 11. Osobna karta graficzna nie jest potrzebna.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Zainstalowałem. Jak aktywować licencję?</h3>
+        <p>Otwórz Karafy i kliknij <strong>Pro / Licencja</strong> w prawym górnym rogu. Wklej klucz z maila po zakupie w pole <strong>Klucz licencyjny</strong> i kliknij <strong>Aktywuj klucz</strong>.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Nadal nie działa?</h3>
+        <p>Napisz na <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300 underline">support@karafy.app</a> i podaj dokładną treść komunikatu.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Stworzone z ❤️ i Whisper AI</p>
+    <p class="mb-2">
+      <a href="/pl/terms.html" class="hover:text-white transition">Regulamin</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/refunds.html" class="hover:text-white transition">Zwroty</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/privacy.html" class="hover:text-white transition">Prywatność</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/install-help.html" hreflang="en" class="hover:text-white transition">English</a>
+    </p>
+    <p class="mb-2">
+      Pomoc: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Naruszenia praw autorskich: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Płatności obsługuje Stripe</p>
+  </footer>
+</body>
+</html>

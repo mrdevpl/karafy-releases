@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows Blocks the Karafy Installer: How to Fix It</title>
+  <meta name="description" content="What to do when SmartScreen or Smart App Control blocks the Karafy installer on Windows, and how to check your download." />
+
+  <link rel="canonical" href="https://karafy.app/install-help.html" />
+  <link rel="alternate" hreflang="en" href="https://karafy.app/install-help.html" />
+  <link rel="alternate" hreflang="pl" href="https://karafy.app/pl/pomoc-instalacja.html" />
+  <link rel="alternate" hreflang="x-default" href="https://karafy.app/install-help.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <a href="/pl/pomoc-instalacja.html" class="text-sm text-gray-400 hover:text-white transition">PL</a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
+    <h1 class="text-4xl font-extrabold mb-4">Windows blocks the <span class="gradient-text">Karafy installer</span></h1>
+    <p class="text-gray-400 mb-12">Karafy is not code-signed yet, so Windows does not recognise its publisher. What you do next depends on which message you see.</p>
+
+    <div class="space-y-10 text-gray-300 leading-relaxed">
+
+      <section class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+        <h2 class="text-xl font-bold text-white mb-2">Haven't bought Karafy yet?</h2>
+        <p>Install the free version first. Your first 10 songs are free, so you can check that Karafy installs on your PC before you pay for anything.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Message 1: "Windows protected your PC"</h2>
+        <p>This is Microsoft Defender SmartScreen, a blue window. It is the common case and takes two clicks:</p>
+        <ol class="list-decimal pl-6 space-y-1 mt-3">
+          <li>Click <strong>More info</strong>.</li>
+          <li>Click <strong>Run anyway</strong>.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Message 2: Smart App Control blocked the app</h2>
+        <p>Smart App Control is a Windows 11 security feature, often on by default on new laptops. It blocks apps from publishers it cannot verify, and it has <strong>no "Run anyway" button</strong>. An unsigned installer can only run if the feature is turned off.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">Read this before you turn it off</h3>
+        <p>Smart App Control protects your whole PC, not just this installer. On many versions of Windows it <strong>cannot be turned back on</strong> without resetting or reinstalling Windows. This is your decision, and keeping it on is a perfectly good choice.</p>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">If you decide to turn it off</h3>
+        <ol class="list-decimal pl-6 space-y-1">
+          <li>Open <strong>Windows Security</strong>.</li>
+          <li>Go to <strong>App &amp; browser control</strong>.</li>
+          <li>Open <strong>Smart App Control settings</strong>.</li>
+          <li>Select <strong>Off</strong>.</li>
+          <li>Run <code>Karafy-win-Setup.exe</code> again.</li>
+        </ol>
+
+        <h3 class="text-lg font-semibold text-white mt-6 mb-2">If you would rather keep it on</h3>
+        <p>Then Karafy can't be installed on this PC until the installer is signed. If you have already paid, email <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300 underline">support@karafy.app</a> within 14 days of purchase and you'll get your money back, as described in our <a href="/refunds.html" class="text-purple-400 hover:text-purple-300 underline">Refund Policy</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">How to check your download</h2>
+        <p>Every version is published openly on <a href="https://github.com/mrdevpl/karafy-releases/releases/latest" class="text-purple-400 hover:text-purple-300 underline">GitHub Releases</a>, with a SHA-256 checksum next to each file. To compare it with yours, open PowerShell in your Downloads folder and run:</p>
+        <pre class="bg-gray-900 border border-gray-800 rounded-xl p-4 mt-3 text-sm overflow-x-auto"><code>Get-FileHash .\Karafy-win-Setup.exe -Algorithm SHA256</code></pre>
+        <p class="mt-3">If the two values match, you have the same file we published.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Common questions</h2>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Why isn't Karafy signed?</h3>
+        <p>Code signing is planned and will remove these messages. We don't have a date for it yet.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Which Windows versions work?</h3>
+        <p>64-bit Windows 10 and 11. No dedicated graphics card is needed.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">I've installed it. How do I activate my licence?</h3>
+        <p>Open Karafy and click <strong>Pro / License</strong> in the top right. Paste your key from the purchase email into the <strong>License key</strong> field and click <strong>Activate key</strong>.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Still stuck?</h3>
+        <p>Email <a href="mailto:support@karafy.app" class="text-purple-400 hover:text-purple-300 underline">support@karafy.app</a> with the exact message you see.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Made with ❤️ and Whisper AI</p>
+    <p class="mb-2">
+      <a href="/terms.html" class="hover:text-white transition">Terms</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/refunds.html" class="hover:text-white transition">Refunds</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/privacy.html" class="hover:text-white transition">Privacy</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/pomoc-instalacja.html" hreflang="pl" class="hover:text-white transition">Polski</a>
+    </p>
+    <p class="mb-2">
+      Support: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Copyright notices: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Payments processed by Stripe</p>
+  </footer>
+</body>
+</html>
