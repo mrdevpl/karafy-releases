@@ -188,4 +188,22 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://karafy.app/karaoke-software-for-pc.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/karaoke-software-for-pc.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/program-do-karaoke-na-komputer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/karaoke-software-for-pc.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/program-do-karaoke-na-komputer.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/karaoke-software-for-pc.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/program-do-karaoke-na-komputer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/karaoke-software-for-pc.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
