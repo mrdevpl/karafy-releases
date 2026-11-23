@@ -134,4 +134,58 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://karafy.app/song-not-in-karaoke-catalog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/song-not-in-karaoke-catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/brak-piosenki-w-katalogu-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/song-not-in-karaoke-catalog.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/brak-piosenki-w-katalogu-karaoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/song-not-in-karaoke-catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/brak-piosenki-w-katalogu-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/song-not-in-karaoke-catalog.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/remove-vocals-for-karaoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/remove-vocals-for-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/usuwanie-wokalu-z-piosenki.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/remove-vocals-for-karaoke.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/usuwanie-wokalu-z-piosenki.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/remove-vocals-for-karaoke.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/usuwanie-wokalu-z-piosenki.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/remove-vocals-for-karaoke.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/karaoke-host-requested-songs.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/karaoke-host-requested-songs.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/karaoke-dla-prowadzacych.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/karaoke-host-requested-songs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://karafy.app/pl/karaoke-dla-prowadzacych.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://karafy.app/karaoke-host-requested-songs.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://karafy.app/pl/karaoke-dla-prowadzacych.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://karafy.app/karaoke-host-requested-songs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

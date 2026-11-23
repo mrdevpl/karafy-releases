@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jak usunąć wokal z piosenki i zrobić podkład do karaoke | Karafy</title>
+  <meta name="description" content="Jak działa usuwanie wokalu przez AI, jakiego efektu się spodziewać i jak z piosenki, którą masz, zrobić podkład karaoke z tekstem na Windows." />
+
+  <link rel="canonical" href="https://karafy.app/pl/usuwanie-wokalu-z-piosenki.html" />
+  <link rel="alternate" hreflang="en" href="https://karafy.app/remove-vocals-for-karaoke.html" />
+  <link rel="alternate" hreflang="pl" href="https://karafy.app/pl/usuwanie-wokalu-z-piosenki.html" />
+  <link rel="alternate" hreflang="x-default" href="https://karafy.app/remove-vocals-for-karaoke.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/pl/" class="font-bold text-lg tracking-tight">Karafy</a>
+      <a href="/remove-vocals-for-karaoke.html" class="text-sm text-gray-400 hover:text-white transition">EN</a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-24">
+    <h1 class="text-4xl font-extrabold mb-4">Jak <span class="gradient-text">usunąć wokal</span> z piosenki do karaoke</h1>
+    <p class="text-gray-400 mb-12">Podkład do karaoke to piosenka bez głównego wokalisty. Oto jak dziś działa usuwanie wokalu, jakiego efektu się spodziewać i jak za jednym razem dostać gotowe karaoke.</p>
+
+    <div class="space-y-10 text-gray-300 leading-relaxed">
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Stara sztuczka i dlaczego rzadko działa</h2>
+        <p>Starsze programy do dźwięku usuwają wokal, wycinając wszystko, co leży na środku miksu stereo. Głos zwykle tam jest, ale jest tam też bas, stopa perkusji i często werbel. Efekt jest cienki, pusty i wciąż słychać w nim echo wokalisty.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Jak działa separacja przez AI</h2>
+        <p>Nowoczesne narzędzia używają sieci neuronowej wytrenowanej na tysiącach piosenek, która rozpoznaje, jak brzmi głos. Dzieli nagranie na dwie ścieżki, wokal i całą resztę, i zostawia perkusję oraz bas w nienaruszonym stanie.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Jakiego efektu się spodziewać</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Nagrania studyjne</strong> z wyraźnym głównym wokalem rozdzielają się najlepiej.</li>
+          <li><strong>Chórki, chóry i mocny pogłos</strong> mogą zostać lekko słyszalne.</li>
+          <li><strong>Nagrania koncertowe</strong> i stare, zaszumione wydania są trudniejsze, bo głos przenika do innych instrumentów.</li>
+        </ul>
+        <p class="mt-3">Przy śpiewaniu ten cichy ślad zwykle nie przeszkadza, bo zagłusza go Twój własny głos.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Od piosenki do karaoke w Karafy</h2>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>Otwórz plik z piosenką, którą masz (MP3, WAV, FLAC, M4A, OGG, MP4 lub MKV), i kliknij Generuj.</li>
+          <li>Karafy oddziela wokal na Twoim komputerze i w tym samym przebiegu rozpoznaje oraz synchronizuje tekst.</li>
+          <li>Sprawdź tekst we wbudowanym edytorze.</li>
+          <li>Wyeksportuj wersję karaoke jako KFN, MP3+G, MP4 lub LRC: podkład i tekst razem, gotowe do śpiewania.</li>
+        </ol>
+        <p class="mt-3">Zależy Ci na najczystszym efekcie? Wybierz przetwarzanie w chmurze: używa naszych najmocniejszych modeli separacji i transkrypcji, więc podkład jest czystszy, a tekst dokładniejszy. Działa na kredytach w chmurze, które dostajesz z Pro albo w pakietach kredytów.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Częste pytania</h2>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Czy dostanę sam podkład jako osobny plik?</h3>
+        <p>Tak. Karafy zapisuje KFN z oryginalną piosenką i drugi, oznaczony <em>(karaoke)</em>, z podkładem.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Czy moja piosenka opuszcza komputer?</h3>
+        <p>Przy przetwarzaniu lokalnym nie. Tylko gdy wybierzesz chmurę, dźwięk jest wysyłany do separacji i transkrypcji.</p>
+        <h3 class="text-lg font-semibold text-white mt-4 mb-1">Ile to kosztuje?</h3>
+        <p>Pierwsze 10 utworów jest za darmo. Pro to jednorazowa opłata za nieograniczoną liczbę utworów na Twoim komputerze.</p>
+      </section>
+
+      <section class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-2">Zrób swój pierwszy podkład</h2>
+        <p class="text-gray-400 mb-5">Windows 10/11 · 10 utworów za darmo · bez zakładania konta</p>
+        <a href="https://github.com/mrdevpl/karafy-releases/releases/latest/download/Karafy-win-Setup.exe" class="inline-block bg-purple-600 hover:bg-purple-500 text-white font-semibold px-8 py-3 rounded-xl transition">Pobierz Karafy</a>
+        <p class="text-sm text-gray-500 mt-4">Zobacz też: <a href="/pl/brak-piosenki-w-katalogu-karaoke.html" class="text-purple-400 hover:text-purple-300 underline">nie ma piosenki w katalogu karaoke?</a></p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-800 py-10 px-6 text-center text-sm text-gray-400">
+    <p class="mb-2">Karafy · Windows 10/11 · Stworzone z ❤️ i Whisper AI</p>
+    <p class="mb-2">
+      <a href="/pl/terms.html" class="hover:text-white transition">Regulamin</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/refunds.html" class="hover:text-white transition">Zwroty</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/pl/privacy.html" class="hover:text-white transition">Prywatność</a>
+      <span class="text-gray-600 mx-2">·</span>
+      <a href="/remove-vocals-for-karaoke.html" hreflang="en" class="hover:text-white transition">English</a>
+    </p>
+    <p class="mb-2">
+      Pomoc: <a href="mailto:support@karafy.app" class="hover:text-white transition">support@karafy.app</a>
+      <span class="text-gray-600 mx-2">·</span>
+      Naruszenia praw autorskich: <a href="mailto:copyright@karafy.app" class="hover:text-white transition">copyright@karafy.app</a>
+    </p>
+    <p class="text-gray-500">GemuStudio Krzysztof Owsiany · Oporówko 10, 64-120 Krzemieniewo · NIP 686-154-98-83 · Płatności obsługuje Stripe</p>
+  </footer>
+</body>
+</html>
