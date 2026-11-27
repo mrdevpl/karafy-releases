@@ -616,8 +616,7 @@
         const changelog = document.getElementById('changelog');
         changelog.innerHTML = releases.map(r => {
           const date = new Date(r.published_at).toLocaleDateString('pl-PL', { year: 'numeric', month: 'short', day: 'numeric' });
-          const notes = (r.body ?? '')
-            .split(/\n---/)[0]
+          const notes = sectionFor(r.body, "## Co nowego")
             .split('\n')
             .map(l => l.trim())
             .filter(l => l.startsWith('-') || l.startsWith('*'))
@@ -637,6 +636,14 @@
         document.getElementById('changelog').innerHTML =
           '<p class="text-gray-400 text-center">Nie można załadować listy wydań — zobacz <a href="https://github.com/mrdevpl/karafy-releases/releases" class="text-purple-400 underline">GitHub Releases</a>.</p>';
       }
+    }
+
+    // Release notes carry an English and a Polish "what's new" section; older releases
+    // have only English, so fall back to everything above the first "---".
+    function sectionFor(body, heading) {
+      const top = (body ?? '').split(/\n---/)[0];
+      const own = top.split(/\n(?=## )/).find(s => s.trimStart().startsWith(heading));
+      return own ?? top;
     }
 
     function escapeHtml(s) {
